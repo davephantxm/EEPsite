@@ -26,7 +26,7 @@ function loadHeader() {
                         <a href="about.html" class="text-gray-700 hover:text-primary-green nav-link transition-colors duration-300">News</a>
                         <a href="#" class="text-gray-700 hover:text-primary-green nav-link transition-colors duration-300">Media</a>
                     </div>
-                    <button class="md:hidden">
+                    <button id="mobile-menu-btn" class="md:hidden" aria-label="Open menu" aria-expanded="false">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -34,7 +34,60 @@ function loadHeader() {
                 </div>
             </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden md:hidden">
+            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full bg-white shadow-lg p-8 flex flex-col space-y-6 animate-slide-down">
+                <button id="close-mobile-menu" class="self-end mb-8" aria-label="Close menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <a href="index.html" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">Home</a>
+                <a href="eep-i.html" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">EEP Phase I</a>
+                <a href="#eep-phase-2" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">EEP Phase II</a>
+                <a href="#eep-phase-3" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">EEP Phase III</a>
+                <a href="stem.html" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">Female STEM Internship</a>
+                <a href="#" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">Resources</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">News</a>
+                <a href="#" class="block text-gray-700 hover:text-primary-green text-lg font-semibold">Media</a>
+            </div>
+        </div>
     </header>
     `;
     document.getElementById('header').innerHTML = header;
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileMenu.classList.remove('hidden');
+            menuBtn.setAttribute('aria-expanded', 'true');
+        });
+    }
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        });
+    }
+    // Close menu when clicking outside
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 } 
