@@ -65,6 +65,11 @@
         .footer-link:hover {
             transform: translateX(8px);
         }
+
+        /* For smoother slide transitions */
+        .carousel-slide {
+            will-change: opacity, transform;
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -73,24 +78,62 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="relative h-screen">
-            <div class="absolute inset-0">
-                <img src="images/Hero_Image.png" alt="Solar Panels" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black opacity-50"></div>
-            </div>
-            <div class="relative container mx-auto px-4 h-full flex items-center">
-                <div class="max-w-3xl text-white">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                        ENERGIZING EDUCATION PROGRAMME (EEP)
-                    </h1>
-                    <p class="text-xl md:text-2xl mb-8">
-                        A Federal Government of Nigeria initiative providing sustainable, clean power to 37 federal universities and 7 university teaching hospitals nationwide.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="about.html" class="bg-primary-green text-white px-8 py-3 rounded-full hover:opacity-90 transition duration-300">
-                            About EEP
-                        </a>
+        <!-- Hero Section (Carousel) -->
+        <section class="relative h-screen overflow-hidden">
+            <div id="carousel" class="relative h-full">
+                <!-- Slides -->
+                <div class="carousel-slide absolute inset-0 transition-all duration-700 transform translate-x-0 opacity-100" style="z-index: 1;">
+                    <img src="Images/EEP HomePage Carousel 1.jpg" alt="EEP HomePage Carousel 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 transition-all duration-700 transform translate-x-full opacity-0" style="z-index: 0;">
+                    <img src="Images/EEP HomePage Carousel 2.jpg" alt="EEP HomePage Carousel 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 transition-all duration-700 transform translate-x-full opacity-0" style="z-index: 0;">
+                    <img src="Images/EEP HomePage Carousel 3.jpg" alt="EEP HomePage Carousel 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 transition-all duration-700 transform translate-x-full opacity-0" style="z-index: 0;">
+                    <img src="Images/EEP HomePage Carousel 4.jpg" alt="EEP HomePage Carousel 4" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                </div>
+                <!-- Overlay Content (dynamic for each slide) -->
+                <div class="relative container mx-auto px-4 h-full flex items-center z-10">
+                    <div class="max-w-3xl text-white">
+                        <h1 id="carousel-title" class="text-4xl md:text-6xl font-bold mb-6">
+                            ENERGIZING EDUCATION PROGRAMME (EEP)
+                        </h1>
+                        <p id="carousel-desc" class="text-xl md:text-2xl mb-8">
+                            A Federal Government of Nigeria initiative providing sustainable, clean power to 37 federal universities and 7 university teaching hospitals nationwide.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a id="carousel-btn" href="about.html" class="bg-primary-green text-white px-8 py-3 rounded-full hover:opacity-90 transition duration-300">
+                                About EEP
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white rounded-full p-2 hover:bg-opacity-70 z-20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white rounded-full p-2 hover:bg-opacity-70 z-20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <!-- Progress Bar Indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-2/3 h-2 flex space-x-2 z-20">
+                    <div class="carousel-progress-bar flex-1 h-full bg-white bg-opacity-30 rounded-full overflow-hidden">
+                        <div class="carousel-progress-fill h-full bg-primary-green transition-all duration-0" style="width: 0%"></div>
+                    </div>
+                    <div class="carousel-progress-bar flex-1 h-full bg-white bg-opacity-30 rounded-full overflow-hidden">
+                        <div class="carousel-progress-fill h-full bg-primary-green transition-all duration-0" style="width: 0%"></div>
+                    </div>
+                    <div class="carousel-progress-bar flex-1 h-full bg-white bg-opacity-30 rounded-full overflow-hidden">
+                        <div class="carousel-progress-fill h-full bg-primary-green transition-all duration-0" style="width: 0%"></div>
+                    </div>
+                    <div class="carousel-progress-bar flex-1 h-full bg-white bg-opacity-30 rounded-full overflow-hidden">
+                        <div class="carousel-progress-fill h-full bg-primary-green transition-all duration-0" style="width: 0%"></div>
                     </div>
                 </div>
             </div>
@@ -293,6 +336,173 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadHeader();
             loadFooter();
+        });
+
+        // Enhanced Carousel Logic with 4-bar Progress Indicator and Dynamic Text
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const progressBars = document.querySelectorAll('.carousel-progress-bar');
+            const progressFills = document.querySelectorAll('.carousel-progress-fill');
+            const slideDuration = 5000; // ms
+            let current = 0;
+            let interval = null;
+            let isSliding = false;
+
+            // Carousel text content for each slide
+            const carouselData = [
+                {
+                    title: 'ENERGIZING EDUCATION PROGRAMME (EEP)',
+                    desc: 'A Federal Government of Nigeria initiative providing sustainable, clean power to 37 federal universities and 7 university teaching hospitals nationwide.',
+                    btnText: 'About EEP',
+                    btnLink: 'about.html'
+                },
+                {
+                    title: 'Empowering Campuses with Clean Energy',
+                    desc: 'EEP Phase II expands sustainable power to more institutions, fostering innovation and growth across Nigeria.',
+                    btnText: 'See Phase II',
+                    btnLink: '#'
+                },
+                {
+                    title: 'Sustainable Solutions for the Future',
+                    desc: 'EEP Phase III is committed to delivering reliable, renewable energy to the next generation of leaders.',
+                    btnText: 'Learn More',
+                    btnLink: '#'
+                },
+                {
+                    title: 'Transforming Education Nationwide',
+                    desc: 'Join us as we light up campuses and teaching hospitals, driving progress and opportunity.',
+                    btnText: 'Our Impact',
+                    btnLink: '#'
+                }
+            ];
+
+            function updateOverlay(idx) {
+                document.getElementById('carousel-title').textContent = carouselData[idx].title;
+                document.getElementById('carousel-desc').textContent = carouselData[idx].desc;
+                const btn = document.getElementById('carousel-btn');
+                btn.textContent = carouselData[idx].btnText;
+                btn.setAttribute('href', carouselData[idx].btnLink);
+            }
+
+            function updateProgressBars(activeIdx, percent = 0) {
+                progressFills.forEach((fill, i) => {
+                    fill.style.transition = 'none';
+                    if (i < activeIdx) {
+                        fill.style.width = '100%';
+                    } else if (i === activeIdx) {
+                        fill.style.width = percent + '%';
+                    } else {
+                        fill.style.width = '0%';
+                    }
+                });
+            }
+
+            function resetAllBars(idx) {
+                progressFills.forEach((fill, i) => {
+                    fill.style.transition = 'none';
+                    if (i < idx) fill.style.width = '100%';
+                    else fill.style.width = '0%';
+                });
+            }
+
+            function animateCurrentBar(idx) {
+                resetAllBars(idx);
+                setTimeout(() => {
+                    progressFills[idx].style.transition = `width ${slideDuration}ms linear`;
+                    progressFills[idx].style.width = '100%';
+                }, 20);
+            }
+
+            function showSlide(idx, direction = 1) {
+                if (isSliding || idx === current) return;
+                isSliding = true;
+                const prev = current;
+                slides.forEach((slide, i) => {
+                    slide.style.transition = 'none';
+                    if (i === prev) {
+                        slide.style.transform = 'translateX(0)';
+                        slide.style.opacity = '1';
+                        slide.style.zIndex = '1';
+                    } else {
+                        slide.style.transform = `translateX(${direction > 0 ? '100%' : '-100%'})`;
+                        slide.style.opacity = '0';
+                        slide.style.zIndex = '0';
+                    }
+                });
+                setTimeout(() => {
+                    slides[prev].style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
+                    slides[idx].style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
+                    slides[prev].style.transform = `translateX(${direction > 0 ? '-100%' : '100%'})`;
+                    slides[prev].style.opacity = '0';
+                    slides[prev].style.zIndex = '0';
+                    slides[idx].style.transform = 'translateX(0)';
+                    slides[idx].style.opacity = '1';
+                    slides[idx].style.zIndex = '1';
+                }, 10);
+                setTimeout(() => {
+                    current = idx;
+                    isSliding = false;
+                }, 700);
+                updateOverlay(idx);
+                animateCurrentBar(idx);
+            }
+
+            function restartAutoSlide() {
+                clearInterval(interval);
+                interval = setInterval(nextSlide, slideDuration);
+            }
+
+            function nextSlide() {
+                let next = (current + 1) % slides.length;
+                showSlide(next, 1);
+                restartAutoSlide();
+            }
+            function prevSlide() {
+                let prev = (current - 1 + slides.length) % slides.length;
+                showSlide(prev, -1);
+                restartAutoSlide();
+            }
+            function startAutoSlide() {
+                restartAutoSlide();
+                updateOverlay(current);
+                animateCurrentBar(current);
+            }
+            function stopAutoSlide() {
+                clearInterval(interval);
+            }
+
+            document.getElementById('nextSlide').onclick = () => { stopAutoSlide(); nextSlide(); };
+            document.getElementById('prevSlide').onclick = () => { stopAutoSlide(); prevSlide(); };
+
+            // Swipe/drag support (optional, for touch devices)
+            let startX = null;
+            document.getElementById('carousel').addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            });
+            document.getElementById('carousel').addEventListener('touchend', e => {
+                if (startX === null) return;
+                let endX = e.changedTouches[0].clientX;
+                if (endX - startX > 50) { stopAutoSlide(); prevSlide(); startAutoSlide(); }
+                else if (startX - endX > 50) { stopAutoSlide(); nextSlide(); startAutoSlide(); }
+                startX = null;
+            });
+
+            // Initialize
+            slides.forEach((slide, i) => {
+                if (i !== 0) {
+                    slide.style.transform = 'translateX(100%)';
+                    slide.style.opacity = '0';
+                    slide.style.zIndex = '0';
+                } else {
+                    slide.style.transform = 'translateX(0)';
+                    slide.style.opacity = '1';
+                    slide.style.zIndex = '1';
+                }
+            });
+            updateOverlay(0);
+            updateProgressBars(0, 0);
+            animateCurrentBar(0);
+            startAutoSlide();
         });
     </script>
 </body>
