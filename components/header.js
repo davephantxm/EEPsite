@@ -2,7 +2,7 @@ function loadHeader() {
     const header = `
     <header>
         <nav class="fixed w-full z-50 top-6 flex justify-center pointer-events-none">
-            <div class="backdrop-blur-md bg-black/80 rounded-full flex items-center px-6 py-2 max-w-5xl w-full mx-4 shadow-lg pointer-events-auto">
+            <div class="backdrop-blur-xl bg-white/20 border border-white/30 rounded-full flex items-center px-6 py-2 max-w-5xl w-full mx-4 shadow-lg pointer-events-auto" style="box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12);">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
@@ -14,7 +14,7 @@ function loadHeader() {
                                 EEP Projects
                                 <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 bg-black/90 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50">
+                            <div class="absolute left-0 mt-2 w-48 bg-black/80 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50">
                                 <a href="eep-i.html" class="block px-6 py-3 text-gray-200 hover:text-white transition-colors duration-200">EEP Phase I</a>
                                 <a href="#eep-phase-2" class="block px-6 py-3 text-gray-200 hover:text-white transition-colors duration-200">EEP Phase II</a>
                                 <a href="#eep-phase-3" class="block px-6 py-3 text-gray-200 hover:text-white transition-colors duration-200">EEP Phase III</a>
@@ -27,7 +27,7 @@ function loadHeader() {
                     </div>
                 </div>
                 <div class="flex items-center ml-8">
-                    <a href="#" class="bg-black text-white font-semibold px-6 py-2 rounded-full shadow transition hover:bg-white hover:text-black border border-white text-base">Buy Now</a>
+                    <a href="#" class="bg-black/70 text-white font-semibold px-6 py-2 rounded-full shadow transition hover:bg-white hover:text-black border border-white/40 text-base">Buy Now</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden ml-4 text-white" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
