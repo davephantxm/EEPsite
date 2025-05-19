@@ -2,7 +2,7 @@ function loadHeader() {
     const header = `
     <header>
         <nav class="fixed w-full z-50 top-6 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-lg pointer-events-auto" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); border-width: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(0,100,56,0.3) 100%); border: 1px solid transparent; border-image: linear-gradient(90deg, #fff 0%, #006438 100%); border-image-slice: 1;">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-lg pointer-events-auto" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(0,100,56,0.3) 100%);">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
