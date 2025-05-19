@@ -1,8 +1,8 @@
 function loadHeader() {
     const header = `
     <header>
-        <nav class="fixed w-full z-50 top-6 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-6 py-2 max-w-5xl w-full mx-4 shadow-lg pointer-events-auto bg-white/70 border border-white/20" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); border-width: 1px;">
+        <nav class="fixed w-full z-50 top-0 left-0 pointer-events-none">
+            <div class="rounded-none flex items-center px-8 py-2 w-full shadow-lg pointer-events-auto bg-white/70 border-b border-white/20" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); border-width: 1px;">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
@@ -52,7 +52,6 @@ function loadHeader() {
                 <a href="#" class="block text-gray-200 hover:text-white text-lg font-semibold">Resources</a>
                 <a href="about.html" class="block text-gray-200 hover:text-white text-lg font-semibold">News</a>
                 <a href="#" class="block text-gray-200 hover:text-white text-lg font-semibold">Media</a>
-                <a href="#" class="bg-white text-black font-semibold px-6 py-2 rounded-full shadow transition hover:bg-black hover:text-white border border-white text-base text-center">Buy Now</a>
             </div>
         </div>
     </header>
