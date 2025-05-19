@@ -1,8 +1,8 @@
 function loadHeader() {
     const header = `
     <header>
-        <nav class="fixed w-full z-50 top-0 left-0 pointer-events-none">
-            <div class="rounded-none flex items-center px-8 py-2 w-full shadow-lg pointer-events-auto bg-white/70 border-b border-white/20" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); border-width: 1px;">
+        <nav class="fixed w-full z-50 top-6 flex justify-center pointer-events-none">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl w-full mx-4 shadow-lg pointer-events-auto bg-white/70 border border-white/20" style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12); border-width: 1px;">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
@@ -25,9 +25,6 @@ function loadHeader() {
                         <a href="about.html" class="text-gray-200 hover:text-white text-base font-medium transition-colors duration-200">News</a>
                         <a href="#" class="text-gray-200 hover:text-white text-base font-medium transition-colors duration-200">Media</a>
                     </div>
-                </div>
-                <div class="flex items-center ml-8">
-                    <a href="#" class="bg-black/70 text-white font-semibold px-6 py-2 rounded-full shadow transition hover:bg-white hover:text-black border border-white/40 text-base">Buy Now</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden ml-4 text-white" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
