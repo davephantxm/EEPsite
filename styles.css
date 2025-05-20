@@ -226,4 +226,20 @@ html {
 /* Apply Unbounded font to Hero section title */
 #carousel-title {
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+/* Apply Lora font and italic style to Hero section description */
+#carousel-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+/* Apply pulsating glow effect on hover for header text and hero description */
+#header nav a:hover,
+#header nav button:hover,
+#header .group .absolute a:hover,
+#mobile-menu a:hover,
+#carousel-desc:hover {
+    text-shadow: none; /* Ensure no static shadow initially */
+    animation: pulsate-glow 2.5s infinite ease-in-out;
 } 
