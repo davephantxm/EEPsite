@@ -239,9 +239,10 @@ html {
 #header nav button,
 #header .group .absolute a,
 #mobile-menu a,
+#carousel-title,
 #carousel-desc {
     /* Subtle static glow effect */
     text-shadow: 
-        0 0 2px var(--new-white),
-        0 0 5px var(--new-white);
+        0 0 1px var(--new-white),
+        0 0 3px var(--new-white);
 } 
