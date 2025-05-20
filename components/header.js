@@ -2,7 +2,7 @@ function loadHeader() {
     const header = `
     <header>
         <nav class="fixed w-full z-50 top-6 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,0.4);">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,0.2);">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
@@ -14,7 +14,7 @@ function loadHeader() {
                                 EEP Projects
                                 <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
+                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
                                 <a href="eep-i.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase I</a>
                                 <a href="#eep-phase-2" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase II</a>
                                 <a href="#eep-phase-3" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase III</a>
@@ -34,8 +34,8 @@ function loadHeader() {
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
-            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
+        <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
+            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
                 <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
