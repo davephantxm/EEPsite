@@ -185,7 +185,7 @@ html {
 #header .group .absolute a:hover,
 #mobile-menu a:hover {
     text-shadow: none; /* Ensure no static shadow initially */
-    animation: pulsate-glow 1.5s infinite ease-in-out;
+    animation: pulsate-glow 2.5s infinite ease-in-out;
 }
 
 /* Add styles for letter-by-letter glow effect */
