@@ -8,25 +8,25 @@ function loadHeader() {
                 </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html" class="text-black hover:text-black text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="index.html" class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium transition-colors duration-200">Home</a>
                         <div class="relative group">
-                            <button class="text-black hover:text-black text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
+                            <button class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
                                 EEP Projects
                                 <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
-                                <a href="eep-i.html" class="block px-6 py-3 text-black hover:text-black transition-colors duration-200">EEP Phase I</a>
-                                <a href="#eep-phase-2" class="block px-6 py-3 text-black hover:text-black transition-colors duration-200">EEP Phase II</a>
-                                <a href="#eep-phase-3" class="block px-6 py-3 text-black hover:text-black transition-colors duration-200">EEP Phase III</a>
+                                <a href="eep-i.html" class="block px-6 py-3 text-[#e6eae8] hover:text-[#e6eae8] transition-colors duration-200">EEP Phase I</a>
+                                <a href="#eep-phase-2" class="block px-6 py-3 text-[#e6eae8] hover:text-[#e6eae8] transition-colors duration-200">EEP Phase II</a>
+                                <a href="#eep-phase-3" class="block px-6 py-3 text-[#e6eae8] hover:text-[#e6eae8] transition-colors duration-200">EEP Phase III</a>
                             </div>
                         </div>
-                        <a href="stem.html" class="text-black hover:text-black text-base font-medium transition-colors duration-200">Female STEM Internship</a>
-                        <a href="#" class="text-black hover:text-black text-base font-medium transition-colors duration-200">Resources</a>
-                        <a href="about.html" class="text-black hover:text-black text-base font-medium transition-colors duration-200">News</a>
-                        <a href="#" class="text-black hover:text-black text-base font-medium transition-colors duration-200">Media</a>
+                        <a href="stem.html" class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium transition-colors duration-200">Female STEM Internship</a>
+                        <a href="#" class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium transition-colors duration-200">Resources</a>
+                        <a href="about.html" class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium transition-colors duration-200">News</a>
+                        <a href="#" class="text-[#e6eae8] hover:text-[#e6eae8] text-base font-medium transition-colors duration-200">Media</a>
                     </div>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden ml-4 text-black" aria-label="Open menu" aria-expanded="false">
+                <button id="mobile-menu-btn" class="md:hidden ml-4 text-[#e6eae8]" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -36,19 +36,19 @@ function loadHeader() {
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden md:hidden">
             <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full bg-black/90 rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down">
-                <button id="close-mobile-menu" class="self-end mb-8 text-black" aria-label="Close menu">
+                <button id="close-mobile-menu" class="self-end mb-8 text-[#e6eae8]" aria-label="Close menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <a href="index.html" class="block text-black hover:text-black text-lg font-semibold">Home</a>
-                <a href="eep-i.html" class="block text-black hover:text-black text-lg font-semibold">EEP Phase I</a>
-                <a href="#eep-phase-2" class="block text-black hover:text-black text-lg font-semibold">EEP Phase II</a>
-                <a href="#eep-phase-3" class="block text-black hover:text-black text-lg font-semibold">EEP Phase III</a>
-                <a href="stem.html" class="block text-black hover:text-black text-lg font-semibold">Female STEM Internship</a>
-                <a href="#" class="block text-black hover:text-black text-lg font-semibold">Resources</a>
-                <a href="about.html" class="block text-black hover:text-black text-lg font-semibold">News</a>
-                <a href="#" class="block text-black hover:text-black text-lg font-semibold">Media</a>
+                <a href="index.html" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">Home</a>
+                <a href="eep-i.html" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">EEP Phase I</a>
+                <a href="#eep-phase-2" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">EEP Phase II</a>
+                <a href="#eep-phase-3" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">EEP Phase III</a>
+                <a href="stem.html" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">Female STEM Internship</a>
+                <a href="#" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">Resources</a>
+                <a href="about.html" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">News</a>
+                <a href="#" class="block text-[#e6eae8] hover:text-[#e6eae8] text-lg font-semibold">Media</a>
             </div>
         </div>
     </header>
