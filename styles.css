@@ -221,4 +221,9 @@ html {
 #header nav a:hover span:nth-child(8), #header nav button:hover span:nth-child(8), #header .group .absolute a:hover span:nth-child(8), #mobile-menu a:hover span:nth-child(8) { transition-delay: 0.21s; }
 #header nav a:hover span:nth-child(9), #header nav button:hover span:nth-child(9), #header .group .absolute a:hover span:nth-child(9), #mobile-menu a:hover span:nth-child(9) { transition-delay: 0.24s; }
 #header nav a:hover span:nth-child(10), #header nav button:hover span:nth-child(10), #header .group .absolute a:hover span:nth-child(10), #mobile-menu a:hover span:nth-child(10) { transition-delay: 0.27s; }
-/* Add more nth-child rules for longer text */ 
+/* Add more nth-child rules for longer text */
+
+/* Apply Unbounded font to Hero section title */
+#carousel-title {
+    font-family: 'Unbounded', cursive;
+} 
