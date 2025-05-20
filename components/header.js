@@ -34,22 +34,20 @@ function loadHeader() {
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
-            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
-                <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                <a href="index.html" style="color: var(--new-white);" class="block text-lg font-semibold">Home</a>
-                <a href="eep-i.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase I</a>
-                <a href="#eep-phase-2" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase II</a>
-                <a href="#eep-phase-3" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase III</a>
-                <a href="stem.html" style="color: var(--new-white);" class="block text-lg font-semibold">Female STEM Internship</a>
-                <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Resources</a>
-                <a href="about.html" style="color: var(--new-white);" class="block text-lg font-semibold">News</a>
-                <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Media</a>
-            </div>
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 hidden md:hidden w-3/4 max-w-xs rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
+            <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <a href="index.html" style="color: var(--new-white);" class="block text-lg font-semibold">Home</a>
+            <a href="eep-i.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase I</a>
+            <a href="#eep-phase-2" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase II</a>
+            <a href="#eep-phase-3" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase III</a>
+            <a href="stem.html" style="color: var(--new-white);" class="block text-lg font-semibold">Female STEM Internship</a>
+            <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Resources</a>
+            <a href="about.html" style="color: var(--new-white);" class="block text-lg font-semibold">News</a>
+            <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Media</a>
         </div>
     </header>
     `;
@@ -63,28 +61,28 @@ function loadHeader() {
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.remove('hidden', 'translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
             menuBtn.setAttribute('aria-expanded', 'true');
         });
     }
     if (closeBtn && mobileMenu) {
         closeBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
             menuBtn.setAttribute('aria-expanded', 'false');
         });
     }
     // Close menu when clicking outside
     if (mobileMenu) {
         mobileMenu.addEventListener('click', function(e) {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
-            }
+            menuBtn.setAttribute('aria-expanded', 'false');
         });
         // Close menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
                 menuBtn.setAttribute('aria-expanded', 'false');
             });
         });
