@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEP-I - Energizing Education Programme</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-link {
+            transition: transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            transform: translateX(8px);
+        }
+
+        .university-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .university-btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        .university-btn:hover::after {
+            width: 100%;
+        }
+
+        .university-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .university-info {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-out;
+        }
+
+        .university-info.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center">
+            <div class="absolute inset-0">
+                <img src="images/Afterheaderbackground.png" alt="Solar Installation" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50"></div>
+            </div>
+            <div class="relative container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-7xl md:text-8xl font-bold text-white mb-8 animate-fade-in [text-shadow:_2px_2px_0_rgb(0_0_0),_-2px_-2px_0_rgb(0_0_0),_2px_-2px_0_rgb(0_0_0),_-2px_2px_0_rgb(0_0_0)]">
+                        EEP
+                        <span class="relative">
+                            <span class="text-primary-green">I</span>
+                            <div class="absolute -bottom-4 left-0 w-full h-1 bg-primary-green transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- EEP Phase I Projects Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">EEP Phase I Projects</h2>
+                    <div class="w-24 h-1 bg-primary-green mx-auto mb-8"></div>
+                </div>
+
+                <!-- Projects Grid with Menu -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <!-- Left Menu -->
+                    <div class="md:col-span-1">
+                        <nav class="space-y-2">
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn active" data-university="abubakar-tafawa">
+                                Abubakar Tafawa Balewa University, Bauchi
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="bayero">
+                                Bayero University, Kano
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="uam">
+                                University of Agriculture, Makurdi, Benue State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="fupre">
+                                Federal University of Petroleum Resources Effurun, Delta State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="funai">
+                                Federal University Ndufu – Alike, Ikwo, Ebonyi State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="unizik">
+                                Nnamdi Azikiwe University, Awka, Anambra State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="oau">
+                                Obafemi Awolowo University and Teaching Hospital, Ile-Ife, Osun State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="unilag">
+                                University of Lagos, Lagos State
+                            </button>
+                            <button class="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-primary-green hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 university-btn" data-university="udus">
+                                Usmanu Danfodiyo University, Sokoto
+                            </button>
+                        </nav>
+                    </div>
+
+                    <!-- Right Content Area -->
+                    <div class="md:col-span-3 bg-gray-50 rounded-2xl p-8 min-h-[600px] university-content">
+                        <!-- University Content -->
+                        <div id="abubakar-tafawa" class="university-info active">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">ABUBAKAR TAFAWA BALEWA UNIVERSITY TEACHING HOSPITAL, BAUCHI</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: NORTH EAST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="images/atbu.png" alt="Abubakar Tafawa Balewa University Teaching Hospital" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    Abubakar Tafawa Balewa (ATBU) University Was Founded In 1980. The Gubi Campus Is Powered By The Energizing Education Programme. The University Occupies 170 Hectares Of Land. The Total Population Of The University For Undergraduate And Post Graduate Students, Academic And Non-Academic Staff As At July 2016 Was 18,284.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">9</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">5.42MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="images/SITE-AERIAL-VIEW.jpg" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/Area-view-of-the-WTC.jpg" alt="Area View of the WTC" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/469444a3-4a2a-494d-84c1-91a2f20f5716.jpg" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/Installation-of-Batteries-in-progress.jpg" alt="Installation of Batteries in Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/09918046-ab03-4b98-b201-8a86f02c4620.jpg" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/Completed-PV-Modules.jpg" alt="Completed PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/Installation-PV-modules-completed.jpg" alt="Installation PV Modules Completed" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/atbu2.jpg" alt="ATBU 2" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="images/Installation-of-Decking-Chassis.jpg" alt="Installation of Decking Chassis" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bayero" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">BAYERO UNIVERSITY, KANO</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: NORTH WEST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Bayero+University" alt="Bayero University" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    Bayero University, Kano (BUK) was established in 1975. The university is one of the beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">10</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">4.8MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="uam" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">UNIVERSITY OF AGRICULTURE, MAKURDI, BENUE STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: NORTH CENTRAL</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=University+of+Agriculture+Makurdi" alt="University of Agriculture Makurdi" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    The University of Agriculture, Makurdi (UAM) was established in 1988. The university is one of the beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">11</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">5.0MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="fupre" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">FEDERAL UNIVERSITY OF PETROLEUM RESOURCES EFFURUN, DELTA STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: SOUTH SOUTH</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Federal+University+of+Petroleum+Resources" alt="Federal University of Petroleum Resources" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    The Federal University of Petroleum Resources Effurun (FUPRE) was established in 2007. The university is one of the beneficiaries of the Energizing Education Programme. The university specializes in petroleum and energy-related studies, with state-of-the-art facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">12</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">4.5MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="funai" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">FEDERAL UNIVERSITY NDUFU – ALIKE, IKWO, EBONYI STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: SOUTH EAST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Federal+University+Ndufu+Alike" alt="Federal University Ndufu Alike" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    The Federal University Ndufu-Alike Ikwo (FUNAI) was established in 2011. The university is one of the beneficiaries of the Energizing Education Programme. The university has a modern campus with state-of-the-art facilities and a growing student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">13</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">4.2MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="unizik" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">NAMADI AZIKIWE UNIVERSITY, AWKA, ANAMBRA STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: SOUTH EAST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Nnamdi+Azikiwe+University" alt="Nnamdi Azikiwe University" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    Nnamdi Azikiwe University (UNIZIK) was established in 1991. The university is one of the beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">14</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">4.0MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="oau" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">OBAFEMI AWOLOWO UNIVERSITY AND TEACHING HOSPITAL, ILE-IFE, OSUN STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: SOUTH WEST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Obafemi+Awolowo+University" alt="Obafemi Awolowo University" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    Obafemi Awolowo University (OAU) was established in 1962. The university and its teaching hospital are beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university and teaching hospital for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">15</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">5.5MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="unilag" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">UNIVERSITY OF LAGOS, LAGOS STATE</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: SOUTH WEST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=University+of+Lagos" alt="University of Lagos" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    The University of Lagos (UNILAG) was established in 1962. The university is one of the beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">16</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">5.2MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="udus" class="university-info hidden">
+                            <div class="bg-[#f3e6ff] rounded-t-lg p-2 mb-6">
+                                <div class="bg-white w-[99%] mx-auto py-3 px-4 rounded-lg border border-gray-300 shadow-xl">
+                                    <h3 class="text-2xl font-bold text-gray-900 text-center">USMANU DANFODIYO UNIVERSITY, SOKOTO</h3>
+                                    <p class="text-gray-700 mt-1 text-center">REGION: NORTH WEST</p>
+                                </div>
+                            </div>
+                            <!-- School Image Section -->
+                            <div class="w-[99%] mx-auto mb-8">
+                                <img src="https://via.placeholder.com/1200x600?text=Usmanu+Danfodiyo+University" alt="Usmanu Danfodiyo University" class="w-full rounded-lg border-2 border-gray-300 object-cover shadow-xl">
+                            </div>
+                            <!-- School Context Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <p class="text-gray-900 font-medium">
+                                    Usmanu Danfodiyo University (UDUS) was established in 1975. The university is one of the beneficiaries of the Energizing Education Programme. The university has a large campus with modern facilities and a significant student population. The total population of the university for undergraduate and postgraduate students, academic and non-academic staff is substantial.
+                                </p>
+                            </div>
+                            <!-- Project Table Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl overflow-x-auto">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                        <tr class="bg-gray-100 text-gray-900">
+                                            <th class="py-3 px-4 font-semibold">Lot</th>
+                                            <th class="py-3 px-4 font-semibold">Technology</th>
+                                            <th class="py-3 px-4 font-semibold">Capacity</th>
+                                            <th class="py-3 px-4 font-semibold">Contractor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-[#f3e6ff] text-gray-900">
+                                            <td class="py-3 px-4">17</td>
+                                            <td class="py-3 px-4">Solar Hybrid</td>
+                                            <td class="py-3 px-4">4.8MWh</td>
+                                            <td class="py-3 px-4 font-semibold">Sterling & Wilson Nigeria Limited</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Media Section -->
+                            <div class="w-[99%] mx-auto mb-8 bg-white rounded-lg border border-gray-300 shadow-xl p-6">
+                                <h4 class="text-lg font-bold text-center mb-6">MEDIA</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    <img src="https://via.placeholder.com/400x300?text=Site+Aerial+View" alt="Site Aerial View" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Training+Center" alt="Training Center" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Construction+Progress" alt="Construction Progress" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Battery+Installation" alt="Battery Installation" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=PV+Modules" alt="PV Modules" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Control+Room" alt="Control Room" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Street+Lighting" alt="Street Lighting" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Infrastructure" alt="Infrastructure" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                    <img src="https://via.placeholder.com/400x300?text=Project+Overview" alt="Project Overview" class="rounded-lg object-cover w-full h-36 sm:h-40 md:h-44 border border-gray-200 transition-transform duration-300 transform hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add similar divs for other universities -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        // Load components when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+
+            // Get all university buttons and content divs
+            const buttons = document.querySelectorAll('.university-btn');
+            const contents = document.querySelectorAll('.university-info');
+
+            // Add click event listeners to all buttons
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    buttons.forEach(b => b.classList.remove('active', 'bg-primary-green', 'text-white'));
+                    contents.forEach(c => {
+                        c.classList.add('hidden');
+                        c.classList.remove('active');
+                    });
+
+                    // Add active class to clicked button and show corresponding content
+                    button.classList.add('active', 'bg-primary-green', 'text-white');
+                    const universityId = button.getAttribute('data-university');
+                    const content = document.getElementById(universityId);
+                    if (content) {
+                        content.classList.remove('hidden');
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
