@@ -161,4 +161,18 @@ html {
 }
 .dropdown-link:hover::after {
     width: 100%;
+}
+
+/* Add glowing effect on hover for header text */
+#header nav .hidden.md\:flex a:hover,
+#header nav .hidden.md\:flex button:hover,
+#header .group .absolute a:hover,
+#mobile-menu a:hover {
+    text-shadow: 
+        0 0 5px var(--new-white),
+        0 0 10px var(--new-white),
+        0 0 15px var(--new-white),
+        0 0 20px var(--new-white);
+    /* Optional: Add transition for a smoother effect */
+    transition: text-shadow 0.3s ease-in-out;
 } 
