@@ -235,11 +235,13 @@ html {
 }
 
 /* Apply pulsating glow effect on hover for header text and hero description */
-#header nav a:hover,
-#header nav button:hover,
-#header .group .absolute a:hover,
-#mobile-menu a:hover,
-#carousel-desc:hover {
-    text-shadow: none; /* Ensure no static shadow initially */
-    animation: pulsate-glow 2.5s infinite ease-in-out;
+#header nav a,
+#header nav button,
+#header .group .absolute a,
+#mobile-menu a,
+#carousel-desc {
+    /* Subtle static glow effect */
+    text-shadow: 
+        0 0 2px var(--new-white),
+        0 0 5px var(--new-white);
 } 
