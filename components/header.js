@@ -5,10 +5,10 @@ function loadHeader() {
             <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,0.2);">
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <img src="images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
-                </div>
+                    </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200"><span aria-hidden="true">H</span><span aria-hidden="true">o</span><span aria-hidden="true">m</span><span aria-hidden="true">e</span></a>
+                        <a href="index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Home</a>
                         <div class="relative group">
                             <button style="color: var(--new-white);" class="text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
                                 EEP Projects
@@ -27,19 +27,19 @@ function loadHeader() {
                     </div>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden ml-4" style="color: var(--new-white);" aria-label="Open menu" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 hidden md:hidden w-3/4 max-w-xs rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
             <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             <a href="index.html" style="color: var(--new-white);" class="block text-lg font-semibold">Home</a>
             <a href="eep-i.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase I</a>
             <a href="#eep-phase-2" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase II</a>
@@ -76,7 +76,7 @@ function loadHeader() {
     // Close menu when clicking outside
     if (mobileMenu) {
         mobileMenu.addEventListener('click', function(e) {
-            menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-expanded', 'false');
         });
         // Close menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {

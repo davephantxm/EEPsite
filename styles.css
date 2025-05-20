@@ -41,6 +41,22 @@
     }
 }
 
+@keyframes pulsate-glow {
+    0% {
+        text-shadow: none;
+    }
+    50% {
+        text-shadow: 
+            0 0 8px var(--new-white),
+            0 0 15px var(--new-white),
+            0 0 20px var(--new-white),
+            0 0 25px var(--new-white);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
 /* Animation classes */
 .fade-in-up {
     opacity: 0;
@@ -168,13 +184,8 @@ html {
 #header nav .hidden.md\:flex button:hover,
 #header .group .absolute a:hover,
 #mobile-menu a:hover {
-    text-shadow: 
-        0 0 5px var(--new-white),
-        0 0 10px var(--new-white),
-        0 0 15px var(--new-white),
-        0 0 20px var(--new-white);
-    /* Optional: Add transition for a smoother effect */
-    transition: text-shadow 0.3s ease-in-out;
+    text-shadow: none; /* Ensure no static shadow initially */
+    animation: pulsate-glow 1.5s infinite ease-in-out;
 }
 
 /* Add styles for letter-by-letter glow effect */
