@@ -34,8 +34,8 @@ function loadHeader() {
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden md:hidden">
-            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full bg-black/90 rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down">
+        <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
+            <div class="absolute top-0 right-0 w-3/4 max-w-xs h-full rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 animate-slide-down" style="background: rgba(0,100,56,0.4); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
                 <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
