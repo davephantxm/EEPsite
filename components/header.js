@@ -8,7 +8,7 @@ function loadHeader() {
                 </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200"><span aria-hidden="true">H</span><span aria-hidden="true">o</span><span aria-hidden="true">m</span><span aria-hidden="true">e</span></a>
                         <div class="relative group">
                             <button style="color: var(--new-white);" class="text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
                                 EEP Projects

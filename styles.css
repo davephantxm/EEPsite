@@ -175,4 +175,39 @@ html {
         0 0 20px var(--new-white);
     /* Optional: Add transition for a smoother effect */
     transition: text-shadow 0.3s ease-in-out;
-} 
+}
+
+/* Add styles for letter-by-letter glow effect */
+#header nav a span,
+#header nav button span,
+#header .group .absolute a span,
+#mobile-menu a span {
+    /* Initial state: no glow */
+    text-shadow: none;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+#header nav a:hover span,
+#header nav button:hover span,
+#header .group .absolute a:hover span,
+#mobile-menu a:hover span {
+    /* Hover state: apply glow */
+    text-shadow: 
+        0 0 5px var(--new-white),
+        0 0 10px var(--new-white),
+        0 0 15px var(--new-white),
+        0 0 20px var(--new-white);
+}
+
+/* Add delays for sequential effect (example for up to 10 letters) */
+#header nav a:hover span:nth-child(1), #header nav button:hover span:nth-child(1), #header .group .absolute a:hover span:nth-child(1), #mobile-menu a:hover span:nth-child(1) { transition-delay: 0s; }
+#header nav a:hover span:nth-child(2), #header nav button:hover span:nth-child(2), #header .group .absolute a:hover span:nth-child(2), #mobile-menu a:hover span:nth-child(2) { transition-delay: 0.03s; }
+#header nav a:hover span:nth-child(3), #header nav button:hover span:nth-child(3), #header .group .absolute a:hover span:nth-child(3), #mobile-menu a:hover span:nth-child(3) { transition-delay: 0.06s; }
+#header nav a:hover span:nth-child(4), #header nav button:hover span:nth-child(4), #header .group .absolute a:hover span:nth-child(4), #mobile-menu a:hover span:nth-child(4) { transition-delay: 0.09s; }
+#header nav a:hover span:nth-child(5), #header nav button:hover span:nth-child(5), #header .group .absolute a:hover span:nth-child(5), #mobile-menu a:hover span:nth-child(5) { transition-delay: 0.12s; }
+#header nav a:hover span:nth-child(6), #header nav button:hover span:nth-child(6), #header .group .absolute a:hover span:nth-child(6), #mobile-menu a:hover span:nth-child(6) { transition-delay: 0.15s; }
+#header nav a:hover span:nth-child(7), #header nav button:hover span:nth-child(7), #header .group .absolute a:hover span:nth-child(7), #mobile-menu a:hover span:nth-child(7) { transition-delay: 0.18s; }
+#header nav a:hover span:nth-child(8), #header nav button:hover span:nth-child(8), #header .group .absolute a:hover span:nth-child(8), #mobile-menu a:hover span:nth-child(8) { transition-delay: 0.21s; }
+#header nav a:hover span:nth-child(9), #header nav button:hover span:nth-child(9), #header .group .absolute a:hover span:nth-child(9), #mobile-menu a:hover span:nth-child(9) { transition-delay: 0.24s; }
+#header nav a:hover span:nth-child(10), #header nav button:hover span:nth-child(10), #header .group .absolute a:hover span:nth-child(10), #mobile-menu a:hover span:nth-child(10) { transition-delay: 0.27s; }
+/* Add more nth-child rules for longer text */ 
