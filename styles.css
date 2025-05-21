@@ -247,9 +247,21 @@ html {
         0 0 3px var(--new-white);
 }
 
-.phase-title-glow {
-    text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 32px #fff, 0 0 48px #fff;
+/* White glow utility */
+.glow-white {
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff;
 }
-.phase-desc-glow {
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 16px #fff;
+
+/* Century Gothic font utility */
+.font-century-gothic {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+/* Blurred overlay for card text area */
+.card-blur-overlay {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.1) 100%);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 } 
