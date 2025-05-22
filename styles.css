@@ -177,7 +177,7 @@ html {
 }
 .dropdown-link:hover::after {
     width: 100%;
-} 
+}
 
 /* Add glowing effect on hover for header text */
 #header nav .hidden.md\:flex a:hover,
@@ -287,83 +287,4 @@ html {
 .eep-glass-card svg {
     display: inline;
     vertical-align: middle;
-}
-
-.news-card {
-    background: #232323;
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    border: none;
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-.news-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    display: block;
-}
-.news-card-content {
-    padding: 2rem 2rem 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-}
-.news-card-title {
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-.news-card-desc {
-    color: #b0b0b0;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-.news-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-}
-.news-card-stats {
-    display: flex;
-    gap: 1.5rem;
-    color: #fff;
-    font-size: 1rem;
-    align-items: center;
-}
-.news-card-stats span {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-.news-card-date {
-    color: #b0b0b0;
-    font-size: 0.95rem;
-    margin-left: 0.5rem;
-}
-.news-card-btn {
-    background: #2d2d2d;
-    color: #fff;
-    border-radius: 1.5rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
-    cursor: pointer;
-}
-.news-card-btn:hover {
-    background: #006438;
-    color: #fff;
 } 
