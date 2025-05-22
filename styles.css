@@ -287,4 +287,11 @@ html {
 .eep-glass-card svg {
     display: inline;
     vertical-align: middle;
+}
+
+/* Add responsive padding for fixed header */
+@media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px */
+    main {
+        padding-top: 12rem; /* Increased padding to ensure it clears fixed header */
+    }
 } 
