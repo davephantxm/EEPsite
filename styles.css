@@ -177,7 +177,7 @@ html {
 }
 .dropdown-link:hover::after {
     width: 100%;
-}
+} 
 
 /* Add glowing effect on hover for header text */
 #header nav .hidden.md\:flex a:hover,
