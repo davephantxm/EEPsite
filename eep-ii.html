@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEP Phase II - Energizing Education Programme</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <div id="header"></div>
+    <main class="pt-32 pb-16 min-h-screen">
+        <!-- About Section -->
+        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center">EEP Phase II</h1>
+            <p class="text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto">EEP Phase II expands the reach of sustainable, clean energy to more universities and teaching hospitals across Nigeria, fostering innovation, research, and growth. This phase builds on the success of Phase I, delivering reliable power and supporting the next generation of leaders and innovators.</p>
+        </section>
+        <!-- List of Universities Section -->
+        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-8 text-center">Universities Benefitting from Phase II</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-gray-800 list-disc list-inside">
+                <li>University of Lagos (UNILAG)</li>
+                <li>Obafemi Awolowo University (OAU)</li>
+                <li>University of Nigeria, Nsukka (UNN)</li>
+                <li>Federal University of Agriculture, Abeokuta (FUNAAB)</li>
+                <li>University of Calabar (UNICAL)</li>
+                <li>University of Maiduguri (UNIMAID)</li>
+                <li>Federal University of Technology, Owerri (FUTO)</li>
+                <li>Ahmadu Bello University Teaching Hospital (ABUTH)</li>
+                <!-- Add more as needed -->
+            </ul>
+        </section>
+        <!-- Funding Breakdown Section -->
+        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-8 text-center">Funding Breakdown</h2>
+            <div class="flex flex-col md:flex-row md:space-x-12 items-center justify-center">
+                <div class="flex-1 mb-8 md:mb-0">
+                    <ul class="text-lg text-gray-800 space-y-4">
+                        <li><span class="font-semibold text-primary-green">Total Funding:</span> $XX million</li>
+                        <li><span class="font-semibold text-primary-green">Federal Government:</span> $XX million</li>
+                        <li><span class="font-semibold text-primary-green">Development Partners:</span> $XX million</li>
+                        <li><span class="font-semibold text-primary-green">Private Sector:</span> $XX million</li>
+                    </ul>
+                </div>
+                <div class="flex-1 flex items-center justify-center">
+                    <!-- Example Pie Chart Placeholder -->
+                    <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-green-200 via-green-400 to-green-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+        });
+    </script>
+</body>
+</html> 

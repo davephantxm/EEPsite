@@ -16,7 +16,7 @@ function loadHeader() {
                             </button>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
                                 <a href="eep-i.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase I</a>
-                                <a href="#eep-phase-2" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase II</a>
+                                <a href="eep-ii.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase II</a>
                                 <a href="#eep-phase-3" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase III</a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ function loadHeader() {
                 </button>
             <a href="index.html" style="color: var(--new-white);" class="block text-lg font-semibold">Home</a>
             <a href="eep-i.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase I</a>
-            <a href="#eep-phase-2" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase II</a>
+            <a href="eep-ii.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase II</a>
             <a href="#eep-phase-3" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase III</a>
             <a href="stem.html" style="color: var(--new-white);" class="block text-lg font-semibold">Female STEM Internship</a>
             <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Resources</a>
