@@ -176,7 +176,7 @@
             thumb.classList.toggle('border-transparent', i !== carouselIndex);
         });
         // Scroll thumbnail into view if needed
-        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center'});
+        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
     }
     document.getElementById('carousel-prev').onclick = () => {
         updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
