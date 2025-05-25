@@ -14,34 +14,36 @@
 <body class="font-sans bg-gray-50">
     <div id="header"></div>
     <!-- Hero Section -->
-    <section class="relative min-h-[50vh] md:min-h-screen bg-black rounded-3xl overflow-hidden mx-2 mt-8 shadow-2xl flex items-stretch">
-        <img src="images/solararreys-768x480.jpg" alt="EEP Phase II Solar Array" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
-        <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <section class="relative min-h-[50vh] md:min-h-screen bg-white rounded-3xl overflow-hidden mx-2 mt-8 shadow-2xl flex items-stretch">
+        <!-- Clipped Image with dark overlay -->
+        <div class="absolute inset-0 z-0" style="clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%);">
+            <img src="images/solararreys-768x480.jpg" alt="EEP Phase II Solar Array" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
         <div class="relative z-20 flex flex-col justify-center h-full w-full px-6 py-24 max-w-6xl mx-auto">
             <!-- Headline and CTA -->
             <div class="w-full md:w-2/3 flex flex-col justify-center h-full">
-                <span class="text-white text-base md:text-lg mb-4 font-light">#2 Clean Energy Programme in Africa</span>
-                <h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8 drop-shadow-lg">
+                <span class="text-black text-base md:text-lg mb-4 font-light">#2 Clean Energy Programme in Africa</span>
+                <h1 class="text-black text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8 drop-shadow-lg">
                     Energizing Education <br class="hidden md:block" />Programme Phase II
                 </h1>
                 <!-- Optional CTA buttons can go here -->
             </div>
         </div>
-        <!-- KPI Card absolutely at bottom right of hero image -->
-        <div class="absolute bottom-4 right-4 md:bottom-5 md:right-5 z-30">
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex flex-col md:flex-row gap-6 shadow-2xl border border-white/20 min-w-[320px] md:min-w-[400px]"
-                 style="box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25), 0 1.5px 8px 0 rgba(255,200,100,0.10);">
+        <!-- KPI Card in the white cut-out area -->
+        <div class="absolute bottom-0 right-0 z-30 p-4 md:p-8">
+            <div class="bg-white rounded-2xl p-6 flex flex-col md:flex-row gap-6 shadow-2xl border border-white/40 min-w-[320px] md:min-w-[400px]">
                 <div class="flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-bold text-white">7</span>
-                    <span class="text-sm text-white/80 mt-1">Federal Universities</span>
+                    <span class="text-3xl md:text-4xl font-bold text-primary-green">7</span>
+                    <span class="text-sm text-gray-700 mt-1">Federal Universities</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-bold text-white">2</span>
-                    <span class="text-sm text-white/80 mt-1">University Teaching Hospitals</span>
+                    <span class="text-3xl md:text-4xl font-bold text-primary-green">2</span>
+                    <span class="text-sm text-gray-700 mt-1">University Teaching Hospitals</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-bold text-white">6</span>
-                    <span class="text-sm text-white/80 mt-1">Geopolitical Zones</span>
+                    <span class="text-3xl md:text-4xl font-bold text-primary-green">6</span>
+                    <span class="text-sm text-gray-700 mt-1">Geopolitical Zones</span>
                 </div>
             </div>
         </div>
