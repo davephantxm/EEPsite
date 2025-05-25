@@ -87,9 +87,29 @@
                         </div>
                     </div>
                 </div>
-                <!-- Right: Image -->
-                <div class="flex-1 flex items-center justify-center">
-                    <img src="images/abtublurred.jpg" alt="Federal University of Agriculture, Abeokuta" class="rounded-2xl w-full max-w-xs md:max-w-sm object-cover shadow-lg max-h-64 md:max-h-80" />
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="w-full max-w-xs md:max-w-sm flex flex-col items-center">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-[4/5] flex items-center justify-center">
+                            <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main" src="images/abtublurred.jpg" alt="University Carousel" class="rounded-2xl w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300" />
+                            <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-primary-green cursor-pointer transition-all duration-200" src="images/abtublurred.jpg" alt="thumb1" />
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-transparent cursor-pointer transition-all duration-200" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-transparent cursor-pointer transition-all duration-200" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-transparent cursor-pointer transition-all duration-200" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-transparent cursor-pointer transition-all duration-200" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            <img class="carousel-thumb rounded-xl w-14 h-14 object-cover border-2 border-transparent cursor-pointer transition-all duration-200" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,6 +142,41 @@
             loadHeader();
             loadFooter();
         });
+    </script>
+    <script>
+    // Carousel logic for university images
+    const carouselImages = [
+        'images/abtublurred.jpg',
+        'images/atbu-arielview-768x480.jpg',
+        'images/solararreys-768x480.jpg',
+        'images/EodDeqqW4AALVvn-768x480.jpg',
+        'images/EEP HomePage Carousel 1.jpg',
+        'images/EEP HomePage Carousel 2.jpg',
+    ];
+    let carouselIndex = 0;
+    const mainImg = document.getElementById('carousel-main');
+    const thumbs = document.querySelectorAll('.carousel-thumb');
+    function updateCarousel(idx) {
+        carouselIndex = idx;
+        mainImg.src = carouselImages[carouselIndex];
+        thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('border-primary-green', i === carouselIndex);
+            thumb.classList.toggle('border-transparent', i !== carouselIndex);
+        });
+        // Scroll thumbnail into view if needed
+        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+    document.getElementById('carousel-prev').onclick = () => {
+        updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
+    };
+    document.getElementById('carousel-next').onclick = () => {
+        updateCarousel((carouselIndex + 1) % carouselImages.length);
+    };
+    thumbs.forEach((thumb, i) => {
+        thumb.onclick = () => updateCarousel(i);
+    });
+    // Initialize
+    updateCarousel(0);
     </script>
 </body>
 </html> 
