@@ -25,9 +25,15 @@
         <!-- Centered Headline and Subtext on the left -->
         <div class="relative z-30 w-full max-w-6xl mx-auto h-full flex">
             <div class="flex flex-col justify-center h-full w-full md:w-2/3 pl-2 md:pl-8">
-                <h1 class="font-bold text-white text-5xl sm:text-6xl lg:text-7xl leading-tight mb-6" style="font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;">
-                    Energizing Education Programme <br/>Phase II
-                </h1>
+                <div class="relative">
+                    <!-- Accent border/line -->
+                    <div class="absolute -left-4 top-0 h-full w-1 bg-gradient-to-b from-yellow-400 via-orange-400 to-yellow-500 rounded-full shadow-lg hidden md:block"></div>
+                    <!-- Text background -->
+                    <div class="absolute inset-0 bg-black/40 rounded-xl blur-sm -z-10"></div>
+                    <h1 class="font-bold text-white text-5xl sm:text-6xl lg:text-7xl leading-tight mb-6 drop-shadow-[0_2px_16px_rgba(255,255,255,0.7)]" style="font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; text-shadow: 0 2px 16px rgba(255,255,255,0.7), 0 1px 2px rgba(0,0,0,0.5);">
+                        Energizing Education Programme <br/>Phase II
+                    </h1>
+                </div>
             </div>
         </div>
         <!-- KPI Card in the white cut-out area -->
