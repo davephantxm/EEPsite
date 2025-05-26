@@ -556,47 +556,57 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadHeader();
             loadFooter();
+            // Initialize carousels for each university section
+            initCarousel(1);
+            initCarousel(2);
+            initCarousel(3);
+            initCarousel(4);
+            initCarousel(5);
+            initCarousel(6);
+            initCarousel(7);
         });
-    </script>
-    <script>
-    // Carousel logic for university images
-    const carouselImages = [
-        'images/Hero_Image.jpg',
-        'images/atbu-arielview-768x480.jpg',
-        'images/solararreys-768x480.jpg',
-        'images/EodDeqqW4AALVvn-768x480.jpg',
-        'images/EEP HomePage Carousel 1.jpg',
-        'images/EEP HomePage Carousel 2.jpg',
-    ];
-    let carouselIndex = 0;
-    const mainImg = document.getElementById('carousel-main');
-    const thumbs = document.querySelectorAll('.carousel-thumb');
-    function updateCarousel(idx) {
-        carouselIndex = idx;
-        mainImg.src = carouselImages[carouselIndex];
-        thumbs.forEach((thumb, i) => {
-            thumb.classList.toggle('border-primary-green', i === carouselIndex);
-            thumb.classList.toggle('border-transparent', i !== carouselIndex);
-        });
-        // Scroll thumbnail into view if needed - Removed automatic scroll on load
-        // thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
-    }
-    document.getElementById('carousel-prev').onclick = () => {
-        updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
-        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on manual navigation
-    };
-    document.getElementById('carousel-next').onclick = () => {
-        updateCarousel((carouselIndex + 1) % carouselImages.length);
-        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on manual navigation
-    };
-    thumbs.forEach((thumb, i) => {
-        thumb.onclick = () => {
-            updateCarousel(i);
-            thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on thumbnail click
-        };
-    });
-    // Initialize
-    updateCarousel(0);
+
+        function initCarousel(carouselId) {
+            const carouselImages = [
+                'images/Hero_Image.jpg',
+                'images/atbu-arielview-768x480.jpg',
+                'images/solararreys-768x480.jpg',
+                'images/EodDeqqW4AALVvn-768x480.jpg',
+                'images/EEP HomePage Carousel 1.jpg',
+                'images/EEP HomePage Carousel 2.jpg',
+            ];
+            let carouselIndex = 0;
+            const mainImg = document.getElementById(`carousel-main-${carouselId}`);
+            const prevButton = document.getElementById(`carousel-prev-${carouselId}`);
+            const nextButton = document.getElementById(`carousel-next-${carouselId}`);
+            const thumbsContainer = document.getElementById(`carousel-thumbs-${carouselId}`);
+            const thumbs = thumbsContainer.querySelectorAll(`.carousel-thumb-${carouselId}`);
+
+            function updateCarousel(idx) {
+                carouselIndex = idx;
+                mainImg.src = carouselImages[carouselIndex];
+                thumbs.forEach((thumb, i) => {
+                    thumb.classList.toggle('border-primary-green', i === carouselIndex);
+                    thumb.classList.toggle('border-transparent', i !== carouselIndex);
+                });
+                thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
+            }
+
+            prevButton.onclick = () => {
+                updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
+            };
+
+            nextButton.onclick = () => {
+                updateCarousel((carouselIndex + 1) % carouselImages.length);
+            };
+
+            thumbs.forEach((thumb, i) => {
+                thumb.onclick = () => updateCarousel(i);
+            });
+
+            // Initialize
+            updateCarousel(0);
+        }
     </script>
 </body>
 </html> 
