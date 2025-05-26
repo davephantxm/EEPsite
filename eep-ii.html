@@ -188,17 +188,22 @@
             thumb.classList.toggle('border-primary-green', i === carouselIndex);
             thumb.classList.toggle('border-transparent', i !== carouselIndex);
         });
-        // Scroll thumbnail into view if needed
-        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
+        // Scroll thumbnail into view if needed - Removed automatic scroll on load
+        // thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
     }
     document.getElementById('carousel-prev').onclick = () => {
         updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
+        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on manual navigation
     };
     document.getElementById('carousel-next').onclick = () => {
         updateCarousel((carouselIndex + 1) % carouselImages.length);
+        thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on manual navigation
     };
     thumbs.forEach((thumb, i) => {
-        thumb.onclick = () => updateCarousel(i);
+        thumb.onclick = () => {
+            updateCarousel(i);
+            thumbs[carouselIndex].scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); // Scroll on thumbnail click
+        };
     });
     // Initialize
     updateCarousel(0);
