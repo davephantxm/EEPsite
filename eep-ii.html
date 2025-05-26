@@ -105,33 +105,423 @@
                     <div class="flex-1 flex flex-col items-center w-full">
                         <!-- Main Carousel Image -->
                         <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
-                            <button id="carousel-prev" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                            <button id="carousel-prev-1" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                             </button>
-                            <img id="carousel-main" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
-                            <button id="carousel-next" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                            <img id="carousel-main-1" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-1" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                             </button>
                         </div>
                         <!-- Thumbnails -->
-                        <div class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                        <div id="carousel-thumbs-1" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 2 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Michael Okpara University <br> of Agriculture, Umudike</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Abia</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South-East</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-2" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-2" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-2" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-2" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 3 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">University of Calabar <br> & Teaching Hospital</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Cross River</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South-South</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-3" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-3" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-3" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-3" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 4 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">University of Maiduguri <br> & Teaching Hospital</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Borno</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North-East</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-4" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-4" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-4" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-4" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 5 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">University of Abuja</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">F.C.T</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North Central</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-5" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-5" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-5" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-5" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 6 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University Gashua</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Yobe</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North-East</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-6" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-6" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-6" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-6" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 7 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Left: Info -->
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Nigerian Defence Academy</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Kaduna</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North-West</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-[320px] h-[240px] md:w-[480px] md:h-[360px] flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl">
+                            <button id="carousel-prev-7" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-7" src="images/Hero_Image.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" />
+                            <button id="carousel-next-7" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-7" class="flex gap-2 mt-4 w-full justify-center overflow-x-auto">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" />
                             </div>
                         </div>
                     </div>
