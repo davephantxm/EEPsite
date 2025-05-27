@@ -7,6 +7,8 @@
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- AOS Animate on Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         @keyframes slideDown {
             from {
@@ -666,6 +668,14 @@
     <!-- Scripts -->
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <!-- AOS Animate on Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Animation duration
+            once: false // Whether animation should happen only once - while scrolling down
+        });
+    </script>
     <script>
         // Load components when the page loads
         document.addEventListener('DOMContentLoaded', function() {
