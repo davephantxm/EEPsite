@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- AOS Animate on Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body class="font-sans bg-gray-50">
     <div id="header"></div>
@@ -56,7 +58,7 @@
     </section>
     <main class="pt-32 pb-16 min-h-screen">
         <!-- About Section -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row items-center md:space-x-12">
                 <div class="md:w-1/2">
                     <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center md:text-left px-4">EEP Phase II</h1>
@@ -74,7 +76,7 @@
             </div>
         </section>
         <!-- List of Universities Section -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -139,7 +141,7 @@
             </div>
         </section>
         <!-- University Section 2 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -204,7 +206,7 @@
             </div>
         </section>
         <!-- University Section 3 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -269,7 +271,7 @@
             </div>
         </section>
         <!-- University Section 4 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -334,7 +336,7 @@
             </div>
         </section>
         <!-- University Section 5 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -399,7 +401,7 @@
             </div>
         </section>
         <!-- University Section 6 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -464,7 +466,7 @@
             </div>
         </section>
         <!-- University Section 7 -->
-        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12">
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4 items-stretch">
                 <!-- Left: Info -->
                 <div class="flex-1 flex flex-col justify-between">
@@ -552,6 +554,8 @@
     <div id="footer"></div>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <!-- AOS Animate on Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             loadHeader();
@@ -607,6 +611,11 @@
             // Initialize
             updateCarousel(0);
         }
+
+        AOS.init({
+            duration: 800, // Animation duration
+            once: false // Whether animation should happen only once - while scrolling down
+        });
     </script>
 </body>
 </html> 
