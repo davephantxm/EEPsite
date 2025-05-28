@@ -132,6 +132,10 @@
     color: var(--primary-green);
 }
 
+.border-primary-green {
+    border-color: var(--primary-green);
+}
+
 /* Apply custom font */
 body {
     font-family: 'Inter', sans-serif;
