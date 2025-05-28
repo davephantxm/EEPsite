@@ -13,16 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- AOS Animate on Scroll CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-        .bg-hero-news {
-            background-image: url('/images/background.jpg'); /* Using a placeholder for now */
-            background-size: cover;
-            background-position: center;
-        }
-        .eep-green-border {
-            border-left: 8px solid #006438; /* primary-green */
-        }
-    </style>
 </head>
 <body class="font-sans">
     <!-- Header Component -->
@@ -31,12 +21,12 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="relative bg-hero-news bg-cover bg-center text-white py-32" style="min-height: 75vh;">
+        <section class="relative bg-[url('/images/background.jpg')] bg-cover bg-center text-white py-32" style="min-height: 75vh;">
             <!-- Dark Overlay -->
             <div class="absolute inset-0 bg-black opacity-60"></div>
 
             <div class="relative container mx-auto px-4 z-10 flex items-center h-full">
-                <div class="max-w-2xl p-6 rounded-lg bg-black bg-opacity-40 eep-green-border" data-aos="fade-right">
+                <div class="max-w-2xl p-6 rounded-lg bg-black bg-opacity-40 border-l-8 border-[#006438]" data-aos="fade-right">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4 font-['Unbounded',_sans-serif]">News & Updates</h1>
                     <p class="text-xl md:text-2xl font-['Lora',_serif]">Stay informed about the latest developments and milestones of the Energizing Education Programme.</p>
                 </div>
