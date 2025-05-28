@@ -22,7 +22,7 @@ function loadHeader() {
                         </div>
                         <a href="stem.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Female STEM Internship</a>
                         <a href="#" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Resources</a>
-                        <a href="about.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">News</a>
+                        <a href="news.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">News</a>
                         <a href="#" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Media</a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ function loadHeader() {
             <a href="eep-iii.html" style="color: var(--new-white);" class="block text-lg font-semibold">EEP Phase III</a>
             <a href="stem.html" style="color: var(--new-white);" class="block text-lg font-semibold">Female STEM Internship</a>
             <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Resources</a>
-            <a href="about.html" style="color: var(--new-white);" class="block text-lg font-semibold">News</a>
+            <a href="news.html" style="color: var(--new-white);" class="block text-lg font-semibold">News</a>
             <a href="#" style="color: var(--new-white);" class="block text-lg font-semibold">Media</a>
         </div>
     </header>
