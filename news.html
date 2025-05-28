@@ -276,5 +276,12 @@
             once: false // Whether animation should happen only once - while scrolling down
         });
     </script>
+    <script>
+        // Load components when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+        });
+    </script>
 </body>
 </html> 
