@@ -1,14 +1,14 @@
-function loadFooter() {
+function loadFooter(pathToRoot = './') {
     const footer = `
     <footer class="bg-primary-green relative overflow-hidden text-white animate-fade-in">
         <div class="absolute inset-0 opacity-10">
-            <img src="images/lines.png" alt="" class="w-full h-full object-cover">
+            <img src="${pathToRoot}images/lines.png" alt="" class="w-full h-full object-cover">
         </div>
         <div class="relative container mx-auto px-4 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <!-- Logo and Brief -->
                 <div class="col-span-1">
-                    <img src="images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-25 w-auto object-contain mb-8 hover:scale-105 transition-transform duration-300">
+                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-25 w-auto object-contain mb-8 hover:scale-105 transition-transform duration-300">
                 </div>
 
                 <!-- Company Links -->
