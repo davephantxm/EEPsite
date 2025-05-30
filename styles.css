@@ -291,4 +291,10 @@ html {
 .eep-glass-card svg {
     display: inline;
     vertical-align: middle;
+}
+
+/* Add styles for scrolled header */
+.scrolled-header {
+    background: rgba(0, 100, 56, 0.8) !important; /* More opaque primary green */
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.2); /* Add a subtle shadow */
 } 

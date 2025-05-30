@@ -87,4 +87,24 @@ function loadHeader(pathToRoot = './') {
             });
         });
     }
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    // Call handleScroll on initial load
+    handleScroll();
+}
+
+function handleScroll() {
+    const header = document.querySelector('#header nav');
+    const heroSection = document.querySelector('section'); // Assuming the first section is the hero
+
+    if (!header || !heroSection) return;
+
+    const heroHeight = heroSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > heroHeight - header.offsetHeight) { // Adjust threshold based on header height
+        header.classList.add('scrolled-header');
+    } else {
+        header.classList.remove('scrolled-header');
+    }
 } 
