@@ -87,10 +87,6 @@ function loadHeader(pathToRoot = './') {
             });
         });
     }
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    // Call handleScroll on initial load
-    handleScroll();
 }
 
 function handleScroll() {
