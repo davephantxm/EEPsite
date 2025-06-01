@@ -222,15 +222,12 @@
 
                 function showSlide(index) {
                     slides.forEach((slide, i) => {
-                        slide.style.transform = `translateX(${(i - index) * 100}%)`;
-                         // Only set zIndex and opacity for the active slide
                         if (i === index) {
-                            slide.style.opacity = '1'; // Ensure active slide is fully visible
-                            slide.style.zIndex = '1'; // Bring active slide to front
+                            slide.style.display = 'block'; // Display the active slide
+                             // Keep transform for potential animations if needed later, but display handles visibility
+                            slide.style.transform = 'translateX(0%)';
                         } else {
-                            // Rely on transform and overflow: hidden for inactive slides
-                            slide.style.opacity = ''; // Remove explicit opacity
-                            slide.style.zIndex = ''; // Remove explicit zIndex
+                            slide.style.display = 'none'; // Hide inactive slides
                         }
                         indicators[i].classList.remove('active');
                     });
