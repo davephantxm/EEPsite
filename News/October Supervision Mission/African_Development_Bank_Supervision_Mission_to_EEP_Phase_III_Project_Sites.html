@@ -23,19 +23,23 @@
             width: 100%;
             overflow: hidden;
             border-radius: 1rem; /* rounded-2xl */
+            max-height: 400px; /* Added max-height */
         }
         .carousel-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+             height: 100%; /* Ensure slides fill the container height */
         }
         .carousel-slide {
             min-width: 100%;
             box-sizing: border-box;
+             height: 100%; /* Ensure slides fill the container height */
         }
         .carousel-slide img {
             display: block;
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
+            height: 100%; /* Ensure images fill the slide height */
+            object-fit: cover; /* Added object-fit */
         }
         .carousel-control {
             position: absolute;
