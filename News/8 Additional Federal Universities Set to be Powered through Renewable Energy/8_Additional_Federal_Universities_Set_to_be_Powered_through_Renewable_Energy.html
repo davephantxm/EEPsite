@@ -179,7 +179,13 @@
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
-                    slide.style.transform = `translateX(${(i - index) * 100}%)`;
+                    if (i === index) {
+                        slide.style.display = 'block'; // Display the active slide
+                         // Keep transform for potential animations if needed later, but display handles visibility
+                        slide.style.transform = 'translateX(0%)';
+                    } else {
+                        slide.style.display = 'none'; // Hide inactive slides
+                    }
                     indicators[i].classList.remove('active');
                 });
                 indicators[index].classList.add('active');
