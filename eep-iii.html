@@ -184,26 +184,7 @@
                             </button>
                         </div>
                         <!-- Thumbnails -->
-                        <!-- <div id="carousel-thumbs-2" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
-                            </div>
-                        </div> -->
+                        
                     </div>
                 </div>
             </div>
@@ -249,26 +230,7 @@
                             </button>
                         </div>
                         <!-- Thumbnails -->
-                        <!-- <div id="carousel-thumbs-3" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
-                            </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
-                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
-                            </div>
-                        </div> -->
+                        
                     </div>
                 </div>
             </div>
@@ -619,8 +581,7 @@
             loadFooter();
             // Initialize carousels for each university section
             initCarousel(1);
-            initCarousel(2);
-            initCarousel(3);
+            
             initCarousel(4);
             initCarousel(5);
             initCarousel(6);
@@ -631,6 +592,11 @@
         function initCarousel(carouselId) {
             // Dynamically get images from the thumbnail elements
             const thumbsContainer = document.getElementById(`carousel-thumbs-${carouselId}`);
+            // Check if thumbsContainer exists before proceeding
+            if (!thumbsContainer) {
+                console.error(`Thumbnail container not found for carousel ID ${carouselId}`);
+                return; // Exit the function if container is not found
+            }
             const thumbs = thumbsContainer.querySelectorAll(`.carousel-thumb-${carouselId}`);
             const carouselImages = Array.from(thumbs).map(thumb => thumb.src); // Get src from existing thumbnail images
 
@@ -665,6 +631,14 @@
 
             // Initialize the carousel to show the first image
             updateCarousel(0);
+
+            // Hide navigation buttons if there\'s only one image
+            if (carouselImages.length <= 1) {
+                prevButton.style.display = 'none';
+                nextButton.style.display = 'none';
+                // Optionally hide the thumbnail container as well if no thumbnails are needed
+                thumbsContainer.style.display = 'none';
+            }
         }
 
         AOS.init({
