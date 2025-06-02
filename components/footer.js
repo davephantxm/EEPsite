@@ -84,7 +84,7 @@ function loadFooter(pathToRoot = './') {
 
             <!-- Bottom Bar -->
             <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm">
-                <p>&copy; 2024 Energizing Education Programme. All rights reserved.</p>
+                <p>&copy; 2025 Energizing Education Programme. All rights reserved.</p>
             </div>
         </div>
     </footer>
