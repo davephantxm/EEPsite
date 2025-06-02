@@ -583,8 +583,8 @@
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
                                 <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTA/03_ FUTA.jpg" alt="thumb3" loading="lazy" />
-                            <!-- </div>
-                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                            </div>
+                            <!-- <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
                                 <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
                             </div>
                             <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
@@ -628,23 +628,19 @@
         });
 
         function initCarousel(carouselId) {
-            const carouselImages = [
-                'images/Hero_Image.jpg',
-                'images/atbu-arielview-768x480.jpg',
-                'images/solararreys-768x480.jpg',
-                'images/EodDeqqW4AALVvn-768x480.jpg',
-                'images/EEP HomePage Carousel 1.jpg',
-                'images/EEP HomePage Carousel 2.jpg',
-            ];
+            // Dynamically get images from the thumbnail elements
+            const thumbsContainer = document.getElementById(`carousel-thumbs-${carouselId}`);
+            const thumbs = thumbsContainer.querySelectorAll(`.carousel-thumb-${carouselId}`);
+            const carouselImages = Array.from(thumbs).map(thumb => thumb.src); // Get src from existing thumbnail images
+
             let carouselIndex = 0;
             const mainImg = document.getElementById(`carousel-main-${carouselId}`);
             const prevButton = document.getElementById(`carousel-prev-${carouselId}`);
             const nextButton = document.getElementById(`carousel-next-${carouselId}`);
-            const thumbsContainer = document.getElementById(`carousel-thumbs-${carouselId}`);
-            const thumbs = thumbsContainer.querySelectorAll(`.carousel-thumb-${carouselId}`);
 
+            // Function to update the main image and thumbnail borders
             function updateCarousel(idx) {
-                carouselIndex = idx;
+                carouselIndex = (idx + carouselImages.length) % carouselImages.length; // Ensure index wraps around
                 mainImg.src = carouselImages[carouselIndex];
                 thumbs.forEach((thumb, i) => {
                     thumb.classList.toggle('border-primary-green', i === carouselIndex);
@@ -652,19 +648,21 @@
                 });
             }
 
+            // Event listeners for navigation buttons
             prevButton.onclick = () => {
-                updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
+                updateCarousel(carouselIndex - 1);
             };
 
             nextButton.onclick = () => {
-                updateCarousel((carouselIndex + 1) % carouselImages.length);
+                updateCarousel(carouselIndex + 1);
             };
 
+            // Event listeners for thumbnails
             thumbs.forEach((thumb, i) => {
                 thumb.onclick = () => updateCarousel(i);
             });
 
-            // Initialize
+            // Initialize the carousel to show the first image
             updateCarousel(0);
         }
 
