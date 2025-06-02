@@ -10,58 +10,667 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- AOS Animate on Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+         .eep-green-border {
+            border-left: 8px solid #006438; /* primary-green */
+        }
+    </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-gray-50 overflow-x-hidden">
     <div id="header"></div>
-    <main class="pt-32 pb-16 min-h-screen">
-        <!-- About Section -->
-        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center">EEP Phase III</h1>
-            <p class="text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto">EEP Phase III is dedicated to delivering reliable, renewable energy to the next generation of leaders. This phase continues the mission of the EEP by expanding access to sustainable power, supporting academic excellence, and driving progress in Nigerian universities and teaching hospitals.</p>
-        </section>
-        <!-- List of Universities Section -->
-        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-8 text-center">Universities Benefitting from Phase III</h2>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-gray-800 list-disc list-inside">
-                <li>Federal University of Lafia (FULAFIA)</li>
-                <li>Federal University of Lokoja (FULOKOJA)</li>
-                <li>Federal University of Kashere (FUKASHERE)</li>
-                <li>Federal University of Wukari (FUWUKARI)</li>
-                <li>Federal University of Birnin Kebbi (FUBK)</li>
-                <li>Federal University of Gusau (FUGUS)</li>
-                <li>Federal University of Dutse (FUD)</li>
-                <li>Federal University of Dutsin-Ma (FUDMA)</li>
-                <!-- Add more as needed -->
-            </ul>
-        </section>
-        <!-- Funding Breakdown Section -->
-        <section class="max-w-5xl mx-auto px-4 py-12 bg-white rounded-3xl shadow-xl mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-8 text-center">Funding Breakdown</h2>
-            <div class="flex flex-col md:flex-row md:space-x-12 items-center justify-center">
-                <div class="flex-1 mb-8 md:mb-0">
-                    <ul class="text-lg text-gray-800 space-y-4">
-                        <li><span class="font-semibold text-primary-green">Total Funding:</span> $XX million</li>
-                        <li><span class="font-semibold text-primary-green">Federal Government:</span> $XX million</li>
-                        <li><span class="font-semibold text-primary-green">Development Partners:</span> $XX million</li>
-                        <li><span class="font-semibold text-primary-green">Private Sector:</span> $XX million</li>
-                    </ul>
-                </div>
-                <div class="flex-1 flex items-center justify-center">
-                    <!-- Example Pie Chart Placeholder -->
-                    <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-green-200 via-green-400 to-green-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
-                        Pie Chart
+    <!-- Hero Section -->
+    <section class="relative w-full bg-white rounded-3xl overflow-hidden mx-2 mt-1 shadow-2xl flex items-center justify-start h-full" style="min-height:80vh;" data-aos="fade-in">
+        <!-- Background Image with dark overlay -->
+        <img src="images/01_FULOKOJA.jpg" alt="EEP Phase III Solar Array" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <!-- Fake cut-out: white rounded rectangle at bottom right -->
+        <div class="absolute bottom-0 right-0 z-20 p-4 md:p-8" data-aos="fade-left" data-aos-delay="300">
+            <div class="bg-white rounded-2xl min-w-[320px] md:min-w-[400px] min-h-[120px] md:min-h-[140px] shadow-2xl"></div>
+        </div>
+        <!-- Centered Headline and Subtext on the left -->
+        <div class="relative z-30 w-full max-w-6xl mx-auto h-full flex">
+            <div class="flex flex-col justify-center h-full w-full md:w-2/3 pl-2 md:pl-8">
+                <div class="relative">
+                    <div class="relative container mx-auto px-4 z-10 flex items-center h-full">
+                        <div class="max-w-2xl p-6 rounded-lg bg-black bg-opacity-40 border-l-8 border-primary-green" data-aos="fade-right">
+                            <h1 class="text-white text-4xl md:text-6xl font-bold mb-4 font-['Unbounded',_sans-serif]">Energizing Education Programme <br/>Phase III</h1>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- KPI Card in the white cut-out area -->
+        <div class="absolute bottom-0 right-0 z-40 p-4 md:p-2" data-aos="zoom-in" data-aos-delay="400">
+            <div class="bg-white rounded-2xl p-3 sm:p-6 flex flex-row gap-3 sm:gap-6 shadow-2xl border border-white/40 min-w-[280px] sm:min-w-[320px] md:min-w-[400px]">
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green" data-aos="zoom-in" data-aos-delay="500">8</span>
+                    <span class="text-xs sm:text-sm text-gray-700 mt-1">Federal Universities</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green" data-aos="zoom-in" data-aos-delay="600">2</span>
+                    <span class="text-xs sm:text-sm text-gray-700 mt-1">University Teaching Hospitals</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green" data-aos="zoom-in" data-aos-delay="700">6</span>
+                    <span class="text-xs sm:text-sm text-gray-700 mt-1">Geopolitical Zones</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="pt-32 pb-16 min-h-screen">
+        <!-- About Section -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center md:text-left px-4">EEP Phase II</h1>
+                    <p class="text-lg md:text-xl text-gray-700 text-center md:text-left leading-7 px-4 py-2 text-justify">
+                        The Phase III of the Energizing Education Programme (EEP), funded by the African Development Bank (AfDB) under the Nigeria Electrification Project (NEP), is currently under construction across 8 universities spanning Nigeria's 6 geopolitical zones.
+                        This phase provides reliable electricity access to 148,361 students through uninterrupted power supply systems and installs 250 streetlights across campuses for enhanced safety. The program achieves significant environmental impact with 6.08 kilotons of annual CO2 savings by replacing diesel generators with cleaner energy alternatives.
+                        The AfDB-supported NEP initiative emphasizes capacity building with 200 staff members receiving practical training in renewable energy systems, while 800 students gain hands-on experience through state-of-the-art training centers. Gender inclusion is prioritized with 160 female students receiving specialized training.
+                        Phase III demonstrates the AfDB's partnership with Nigeria through the NEP in advancing renewable energy education across all geopolitical zones and accelerating the country's clean energy transition. <br> The EEP Phase III beneficiary institutions are as follows:
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center" data-aos="fade-left">
+                    <!-- Optional Image or Illustration for About Section -->
+                    <img src="images/EEP_Phase_3_Unis/EEP III info.JPG" alt="EEP Phase III Info" class="w-full h-auto object-contain" />
+                </div>
+            </div>
+        </section>
+        <!-- List of Universities Section -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Modibbo Adama University of Technology,<br> Yola</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Adamawa State</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North East</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-1" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-1" src="images/EEP_Phase_3_Unis/MAU/01_MAU_PROJECT_PICTURE.png" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-1" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-1" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/MAU/01_MAU_PROJECT_PICTURE.png" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/MAU/02_MAU_PROJECT_PICTURE.png" alt="thumb2" loading="lazy" />
+                            </div>
+                            <!-- <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-1 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 2 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Dutsin-Ma</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Katsina</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North-West</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-2" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-2" src="images/EEP_Phase_3_Unis/DUTSIN-MA/01_DUTSIN_MA_PROJECT_PICTURES.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-2" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <!-- <div id="carousel-thumbs-2" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-2 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 3 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Lafia</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Nasarawa</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North-Central</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-3" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-3" src="images/EEP_Phase_3_Unis/FULAFIA/01_FULAFIA.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-3" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <!-- <div id="carousel-thumbs-3" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/Hero_Image.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/atbu-arielview-768x480.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/solararreys-768x480.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-3 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 4 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Lokoja</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Kogi</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">North Central</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-4" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-4" src="images/EEP_Phase_3_Unis/FU_LOKOJA/01_FULOKOJA.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-4" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-4" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/01_FULOKOJA.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/02_FULOKOJA.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/03_FULOKOJA.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/04_FULOKOJA.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/05_FULOKOJA.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-4 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FU_LOKOJA/06_FULOKOJA.jpg" alt="thumb6" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 5 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Technology Owerri</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Imo</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South East</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-5" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-5" src="images/EEP_Phase_3_Unis/FUTO/01_FUTO.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-5" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-5" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTO/01_FUTO.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTO/02_FUTO.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTO/03_FUTO.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <!-- <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-5 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 6 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">University of Port Harcourt</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Rivers</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South-South</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-6" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-6" src="images/EEP_Phase_3_Unis/UNIPORT/01_UNIPORT.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-6" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-6" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIPORT/01_UNIPORT.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIPORT/02_UNIPORT.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIPORT/02_UNIPORT.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <!-- <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-6 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- University Section 7 -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Uyo</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Akwa Ibom</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South-South</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-7" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-7" src="images/EEP_Phase_3_Unis/UNIUYO/01_UNIUYO.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-7" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-7" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIUYO/01_UNIUYO.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIUYO/02_UNIUYO.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/UNIUYO/03_UNIUYO.jpg" alt="thumb3" loading="lazy" />
+                            </div>
+                            <!-- <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- University Section 8 -->
+         <section class="max-w-7xl mx-auto px-2 md:px-8 py-6 mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 md:grid-rows-[auto_auto] gap-4 items-start overflow-hidden">
+                <!-- Left: Info -->
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 flex flex-col justify-between overflow-hidden" data-aos="fade-right">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-6">Federal University of Technology Akure</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-auto w-full max-w-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">State</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Ondo</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Region</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">South West</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Capacity</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">XX MW</span>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 bg-white p-4 flex flex-col items-start justify-center shadow-sm">
+                            <span class="text-xs text-gray-400 font-semibold mb-1">Completion Status</span>
+                            <span class="text-base sm:text-lg font-bold text-gray-800">Under development</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Carousel -->
+                <div class="flex-1 flex flex-col items-center justify-center overflow-hidden" data-aos="fade-left">
+                    <div class="flex-1 flex flex-col items-center w-full">
+                        <!-- Main Carousel Image -->
+                        <div class="relative w-full aspect-w-4 aspect-h-3 flex items-center justify-center overflow-hidden bg-gray-100 rounded-2xl" data-aos="zoom-in">
+                            <button id="carousel-prev-7" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <img id="carousel-main-7" src="images/EEP_Phase_3_Unis/FUTA/01_ FUTA.jpg" alt="University Carousel" class="w-full h-full object-cover border-4 border-primary-green shadow-lg transition-all duration-300 rounded-2xl" loading="lazy" />
+                            <button id="carousel-next-7" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary-green text-primary-green hover:text-white rounded-full p-2 shadow transition-colors z-10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="carousel-thumbs-7" class="flex gap-2 mt-4 w-full justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-primary-green cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTA/01_ FUTA.jpg" alt="thumb1" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTA/02_ FUTA.jpg" alt="thumb2" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP_Phase_3_Unis/FUTA/03_ FUTA.jpg" alt="thumb3" loading="lazy" />
+                            <!-- </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EodDeqqW4AALVvn-768x480.jpg" alt="thumb4" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 1.jpg" alt="thumb5" loading="lazy" />
+                            </div>
+                            <div class="relative w-14 h-14 bg-gray-100 rounded-xl overflow-hidden">
+                                <img class="carousel-thumb-7 absolute inset-0 w-full h-full object-cover border-2 border-transparent cursor-pointer transition-all duration-200 rounded-xl" src="images/EEP HomePage Carousel 2.jpg" alt="thumb6" loading="lazy" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Funding Breakdown Section -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12 overflow-x-hidden" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-8 text-center">Funding Breakdown</h2>
+            <div class="flex flex-col md:flex-row md:space-x-12 items-center justify-center">
+                <p class="text-lg md:text-xl text-gray-700 text-center md:text-left leading-7 px-4 py-2 text-justify">The FGN through the support of the World Bank, has earmarked $145.8 million for the implementation of the programme. This is to cover; the Engineering, Procurement & Construction (EPC) of the power plants, provision of streetlights to improve security within the universities, rehabilitation of existing distribution infrastructure within the universities, one-year operations and maintenance of the power plant, and the construction of a world-class workshop & training centers
+                    In addition to the provision of a reliable source of power to the beneficiary institutions, The EEP includes the following sub-components:
+                    </p>
             </div>
         </section>
     </main>
     <div id="footer"></div>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <!-- AOS Animate on Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             loadHeader();
             loadFooter();
+            // Initialize carousels for each university section
+            initCarousel(1);
+            initCarousel(2);
+            initCarousel(3);
+            initCarousel(4);
+            initCarousel(5);
+            initCarousel(6);
+            initCarousel(7);
+        });
+
+        function initCarousel(carouselId) {
+            const carouselImages = [
+                'images/Hero_Image.jpg',
+                'images/atbu-arielview-768x480.jpg',
+                'images/solararreys-768x480.jpg',
+                'images/EodDeqqW4AALVvn-768x480.jpg',
+                'images/EEP HomePage Carousel 1.jpg',
+                'images/EEP HomePage Carousel 2.jpg',
+            ];
+            let carouselIndex = 0;
+            const mainImg = document.getElementById(`carousel-main-${carouselId}`);
+            const prevButton = document.getElementById(`carousel-prev-${carouselId}`);
+            const nextButton = document.getElementById(`carousel-next-${carouselId}`);
+            const thumbsContainer = document.getElementById(`carousel-thumbs-${carouselId}`);
+            const thumbs = thumbsContainer.querySelectorAll(`.carousel-thumb-${carouselId}`);
+
+            function updateCarousel(idx) {
+                carouselIndex = idx;
+                mainImg.src = carouselImages[carouselIndex];
+                thumbs.forEach((thumb, i) => {
+                    thumb.classList.toggle('border-primary-green', i === carouselIndex);
+                    thumb.classList.toggle('border-transparent', i !== carouselIndex);
+                });
+            }
+
+            prevButton.onclick = () => {
+                updateCarousel((carouselIndex - 1 + carouselImages.length) % carouselImages.length);
+            };
+
+            nextButton.onclick = () => {
+                updateCarousel((carouselIndex + 1) % carouselImages.length);
+            };
+
+            thumbs.forEach((thumb, i) => {
+                thumb.onclick = () => updateCarousel(i);
+            });
+
+            // Initialize
+            updateCarousel(0);
+        }
+
+        AOS.init({
+            duration: 800, // Animation duration
+            once: false // Whether animation should happen only once - while scrolling down
         });
     </script>
 </body>
