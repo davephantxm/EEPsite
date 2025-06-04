@@ -3,116 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEM Programme - Energizing Education Programme</title>
-    <!-- Tailwind CSS CDN -->
+    <title>EEP Phase II - Energizing Education Programme</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- AOS Animate on Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+         .eep-green-border {
+            border-left: 8px solid #006438; /* primary-green */
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-slide-down { animation: slideDown 0.8s ease-out forwards; }
-        .animate-fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: currentColor; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-        .footer-link { transition: transform 0.3s ease; }
-        .footer-link:hover { transform: translateX(8px); }
     </style>
 </head>
-<body class="font-sans">
-    <!-- Header Component -->
+<body class="font-sans bg-gray-50 overflow-x-hidden">
     <div id="header"></div>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center">
-            <div class="absolute inset-0">
-                <img src="images/Afterheaderbackground.png" alt="STEM Programme" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50"></div>
-            </div>
-            <div class="relative container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 animate-fade-in [text-shadow:_2px_2px_0_rgb(0_0_0),_-2px_-2px_0_rgb(0_0_0),_2px_-2px_0_rgb(0_0_0),_-2px_2px_0_rgb(0_0_0)]">
-                        STEM <span class="text-primary-green">Programme</span>
-                    </h1>
-                </div>
-            </div>
-        </section>
-
-        <!-- STEM Programme Content Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <!-- Left Column - Text Content -->
-                    <div class="space-y-6 animate-fade-in">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                            <span class="text-primary-green">S</span>cience,<br>
-                            <span class="text-primary-green">T</span>echnology,<br>
-                            <span class="text-primary-green">E</span>ngineering &<br>
-                            <span class="text-primary-green">M</span>athematics (STEM)
-                        </h2>
-                        <p class="text-gray-700 leading-relaxed">
-                            The EEP STEM Programme is designed to provide female students in Science, Technology, Engineering, and Mathematics with hands-on practical training and experience in the design and construction of power systems. This initiative aims to bridge the gender gap in STEM fields and empower young women to become leaders in Nigeria's energy sector.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            Participants gain real-world skills by working alongside industry professionals during the construction phase of EEP projects, fostering innovation, confidence, and career opportunities in sustainable energy.
-                        </p>
-                    </div>
-                    <!-- Right Column - Image -->
-                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg animate-fade-in">
-                        <img src="images/Completed-PV-Modules.jpg" alt="STEM in Action" class="w-full h-64 object-cover rounded-xl">
+    <!-- Hero Section -->
+    <section class="relative w-full bg-white rounded-3xl overflow-hidden mx-2 mt-1 shadow-2xl flex items-center justify-start h-full" style="min-height:80vh;" data-aos="fade-in">
+        <!-- Background Image with dark overlay -->
+        <img src="images/STEM/STEM_HERO_IMAGE.jpg" alt="EEP Phase STEM" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <!-- Fake cut-out: white rounded rectangle at bottom right -->
+        <div class="absolute bottom-0 right-0 z-20 p-4 md:p-8" data-aos="fade-left" data-aos-delay="300">
+            <div class="bg-white rounded-2xl min-w-[320px] md:min-w-[400px] min-h-[120px] md:min-h-[140px] shadow-2xl"></div>
+        </div>
+        <!-- Centered Headline and Subtext on the left -->
+        <div class="relative z-30 w-full max-w-6xl mx-auto h-full flex">
+            <div class="flex flex-col justify-center h-full w-full md:w-2/3 pl-2 md:pl-8">
+                <div class="relative">
+                    <div class="relative container mx-auto px-4 z-10 flex items-center h-full">
+                        <div class="max-w-2xl p-6 rounded-lg bg-black bg-opacity-40 border-l-8 border-primary-green" data-aos="fade-right">
+                            <h1 class="text-white text-4xl md:text-6xl font-bold mb-4 font-['Unbounded',_sans-serif]">Science, Technology, Engineering and Mathematics (STEM) <br> Female Students Internship Programme</h1>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Impact Section -->
-        <section class="bg-primary-green relative overflow-hidden py-24">
-            <div class="absolute inset-0 opacity-10">
-                <img src="images/lines.png" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="relative container mx-auto px-4">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Programme Impact</h2>
-                    <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
-                    <p class="text-xl text-white/90 max-w-3xl mx-auto">
-                        Inspiring and equipping the next generation of female STEM leaders to drive Nigeria's sustainable future.
+        </div>
+    </section>
+    <main class="pt-32 pb-16 min-h-screen">
+        <!-- About Section -->
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center md:text-left px-4">ABOUT THE EEP STEM INTERNSHIP PROGRAMME</h1>
+                    <p class="text-lg md:text-xl text-gray-700 text-center md:text-left leading-7 px-4 py-2 text-justify">
+                        As gender inclusion is a core object of the REA; to promote and drive women's participation in electrification initiatives, the initiative of the Science, Technology, Engineering and Mathematics (STEM) Female Students Internship Programme was established under the EEP. This Internship Programme is being implemented across all phases of the EEP and is providing hands-on practical experience to twenty (20) female STEM students from each of the beneficiary institutions in the design and construction of the power systems throughout the construction stage of the EEP projects, as well as to provide continued skill/capacity building after the STEM Internship Programme. 
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg animate-fade-in">
-                        <h3 class="text-xl font-semibold text-primary-green mb-4">Hands-on Experience</h3>
-                        <p class="text-gray-700">Participants work directly on real EEP projects, gaining practical skills in renewable energy systems.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg animate-fade-in">
-                        <h3 class="text-xl font-semibold text-primary-green mb-4">Mentorship</h3>
-                        <p class="text-gray-700">Guidance from industry experts and role models to foster growth, confidence, and career development.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg animate-fade-in">
-                        <h3 class="text-xl font-semibold text-primary-green mb-4">Gender Inclusion</h3>
-                        <p class="text-gray-700">Promoting gender diversity in STEM and empowering women to lead in Nigeria's energy sector.</p>
-                    </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center" data-aos="fade-left">
+                    <!-- Optional Image or Illustration for About Section -->
+                    <img src="images/STEM/EEP_STEM_GIRLS_1.png" alt="EEP Phase II About" class="w-full h-auto object-contain" />
                 </div>
             </div>
         </section>
+        <section class="max-w-7xl mx-auto px-2 md:px-8 py-12 bg-white rounded-3xl shadow-xl mb-12 overflow-x-hidden" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary-green mb-6 text-center md:text-left px-4">Objectives</h1>
+                    <p class="text-lg md:text-xl text-gray-700 text-center md:text-left leading-7 px-4 py-2 text-justify">
+                        The objectives of the Internship Programme are as follows: <br>
+•	To assist the students to excel academically in their various STEM courses, as well as encourage them to further advance their studies in STEM-related courses/ disciplines. <br>
+•	To expose and give the students the confidence to take up STEM related careers with experts (indigenous and foreign) companies within the energy sector. <br>
+•	To equip the students with the skills/expertise required to thrive in the renewable energy sector. 
+ 
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center" data-aos="fade-left">
+                    <!-- Optional Image or Illustration for About Section -->
+                    <img src="images/STEM/EEP_STEM_GIRLS_1.png" alt="EEP Phase II About" class="w-full h-auto object-contain" />
+                </div>
+            </div>
+        </section>
+        
     </main>
-
-    <!-- Footer Component -->
     <div id="footer"></div>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
-    <script src="script.js"></script>
+    <!-- AOS Animate on Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHeader();
-            loadFooter();
+               AOS.init({
+            duration: 800, // Animation duration
+            once: false // Whether animation should happen only once - while scrolling down
         });
     </script>
 </body>
