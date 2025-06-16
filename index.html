@@ -398,6 +398,8 @@
                 {
                     title: 'ENERGIZING EDUCATION PROGRAMME (EEP)',
                     desc: 'A Federal Government of Nigeria initiative providing sustainable, clean power to 37 federal universities and 7 university teaching hospitals nationwide.',
+                    // btnText: 'About EEP',
+                    // btnLink: 'about.html'
                 },
                 {
                     title: 'EMPOWERING CAMPUSES WITH CLEAN ENERGY',
@@ -415,7 +417,10 @@
 
             function updateOverlay(idx) {
                 document.getElementById('carousel-title').textContent = carouselData[idx].title;
-                document.getElementById('carousel-desc').textContent = carouselData[idx].desc;   
+                document.getElementById('carousel-desc').textContent = carouselData[idx].desc; 
+                // const btn = document.getElementById('carousel-btn');
+                // btn.textContent = carouselData[idx].btnText;
+                // btn.setAttribute('href', carouselData[idx].btnLink);  
             }
 
             function updateProgressBars(activeIdx, percent = 0) {
