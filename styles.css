@@ -291,49 +291,4 @@ html {
 .eep-glass-card svg {
     display: inline;
     vertical-align: middle;
-}
-
-/* Project Phases Section Customization */
-.project-phases-section {
-    background: url('assets/grid background.jpg') center center/cover no-repeat;
-    padding: 3rem 0;
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-    margin-bottom: 2rem;
-}
-.project-phases-section .phases-header h2 {
-    color: #fff;
-    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-}
-.project-phases-section .phases-header p {
-    color: #e0e0e0;
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-.project-phases-section .phases-header h3 {
-    color: #fff;
-    background: rgba(0, 100, 56, 0.7);
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    margin: 1.5rem auto;
-    font-size: 1.25rem;
-    font-weight: 600;
-    max-width: 900px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-    letter-spacing: 1px;
-    line-height: 1.4;
-    display: block;
-    text-align: center;
-    white-space: normal;
-}
-@media (max-width: 600px) {
-    .project-phases-section .phases-header h3 {
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
-    }
-    .project-phases-section {
-        padding: 1.5rem 0.5rem;
-    }
 } 
