@@ -1,6 +1,6 @@
 function loadFooter(pathToRoot = './') {
     const footer = `
-    <footer style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,0.2);" class="relative overflow-hidden text-white animate-fade-in">
+    <footer style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,0.6);" class="relative overflow-hidden text-white animate-fade-in">
         <div class="relative container mx-auto px-4 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <!-- Logo and Brief -->
