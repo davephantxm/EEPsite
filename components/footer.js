@@ -10,17 +10,17 @@ function loadFooter(pathToRoot = './') {
 
                 <!-- Company Links -->
                 <div class="col-span-1">
-                    <h4 class="text-lg font-semibold mb-6 glow-text">Company</h4>
+                    <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Company</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block glow-text">Visit REA</a></li>
-                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block glow-text">Visit NEP</a></li>
-                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block glow-text">FAQs</a></li>
+                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block">Visit REA</a></li>
+                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block">Visit NEP</a></li>
+                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block">FAQs</a></li>
                     </ul>
                 </div>
 
                 <!-- Social Links -->
                 <div class="col-span-1">
-                    <h4 class="text-lg font-semibold mb-6 glow-text">Social</h4>
+                    <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Social</h4>
                     <ul class="space-y-4">
                         <li>
                             <a href="https://www.linkedin.com/company/rural-electrification-agency-of-nigeria/" class="flex items-center hover:text-gray-200 footer-link glow-text">
@@ -59,35 +59,35 @@ function loadFooter(pathToRoot = './') {
 
                 <!-- Contact Info -->
                 <div class="col-span-1">
-                    <h4 class="text-lg font-semibold mb-6 glow-text">Contact Us</h4>
-                    <address class="not-italic space-y-4 glow-text">
+                    <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Contact Us</h4>
+                    <address class="not-italic space-y-4 footer-glow-hover">
                         <p>22, Freetown Street,</p>
                         <p>Wuse 2, Abuja</p>
                         <p class="mt-4">
-                            <a href="mailto:info@rea.gov.ng" class="hover:text-gray-200 footer-link inline-block glow-text">info@rea.gov.ng</a>
+                            <a href="mailto:info@rea.gov.ng" class="hover:text-gray-200 footer-link inline-block">info@rea.gov.ng</a>
                         </p>
                         <p>
-                            <a href="tel:+2348112494040" class="hover:text-gray-200 footer-link inline-block glow-text">(+234) 811 249 4040</a>
+                            <a href="tel:+2348112494040" class="hover:text-gray-200 footer-link inline-block">(+234) 811 249 4040</a>
                         </p>
                         <p>
-                            <a href="tel:+2348107829134" class="hover:text-gray-200 footer-link inline-block glow-text">(+234) 810 782 9134</a>
+                            <a href="tel:+2348107829134" class="hover:text-gray-200 footer-link inline-block">(+234) 810 782 9134</a>
                         </p>
                         <p>
-                            <a href="tel:+23480020202020" class="hover:text-gray-200 footer-link inline-block glow-text">(+234) 800 202 02020</a>
+                            <a href="tel:+23480020202020" class="hover:text-gray-200 footer-link inline-block">(+234) 800 202 02020</a>
                         </p>
                     </address>
                 </div>
             </div>
 
             <!-- Bottom Bar -->
-            <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm glow-text">
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm">
                 <p>&copy; 2025 Energizing Education Programme. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <style>
-        .glow-text {
-            text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
+        .footer-link:hover, .footer-glow-hover:hover, .footer-glow-hover:focus {
+          text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
         }
     </style>
     `;
