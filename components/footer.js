@@ -1,6 +1,6 @@
 function loadFooter(pathToRoot = './') {
     const footer = `
-    <footer style="background: rgba(0,100,56,0.85); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);" class="relative overflow-hidden text-white animate-fade-in rounded-3xl">
+    <footer style="background: rgba(0,100,56,0.85); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);" class="relative overflow-hidden text-white animate-fade-in rounded-t-3xl">
         <div class="absolute inset-0 pointer-events-none" style="background: url('${pathToRoot}assets/noise.png'); opacity: 0.15; mix-blend-mode: overlay; z-index: 1;"></div>
         <div class="absolute inset-0 opacity-10" style="z-index: 2;">
             <img src="${pathToRoot}images/lines.png" alt="" class="w-full h-full object-cover">
