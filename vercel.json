@@ -1,5 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/admin/callback", "destination": "/admin/callback.html" }
-    ]
-  }
