@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: davephantxm/EEPsite
+  branch: main
+
+media_folder: "images/news"
+public_folder: "/images/news"
+
+collections:
+  - name: "news"
+    label: "News"
+    folder: "News"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "EEP Phase", name: "phase", widget: "select", options: ["I", "II", "III", "IV"] }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" } 
