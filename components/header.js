@@ -9,8 +9,8 @@ function loadHeader(pathToRoot = './') {
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="${pathToRoot}index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Home</a>
-                        <div class="relative group">
-                            <button style="color: var(--new-white);" class="text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
+                        <div class="relative group -m-2">
+                            <button style="color: var(--new-white);" class="text-base font-medium flex items-center focus:outline-none transition-colors duration-200 p-2">
                                 EEP Projects
                                 <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
