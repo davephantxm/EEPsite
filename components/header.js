@@ -19,7 +19,7 @@ function loadHeader(pathToRoot = './') {
                                 EEP Projects
                                 <svg class="ml-1 w-4 h-4" style="transition: transform 0.3s ease-in-out;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 pointer-events-none translate-y-2 transition-all duration-300 z-50 dropdown-menu" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
+                            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 pointer-events-none translate-y-2 transition-all duration-300 z-50 dropdown-menu" style="background: rgba(0,100,56,1); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
                                 <a href="${pathToRoot}eep-i.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase I</a>
                                 <a href="${pathToRoot}eep-ii.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase II</a>
                                 <a href="${pathToRoot}eep-iii.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase III</a>
