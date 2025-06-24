@@ -12,36 +12,39 @@
   
   <!-- Embed the configuration directly to bypass file loading issues -->
   <script>
-    var config = {
-      backend: {
-        name: 'github',
-        repo: 'davephantxm/EEPsite',
-        branch: 'main',
-        auth_type: 'pkce',
-      },
-      media_folder: 'images/news',
-      public_folder: '/images/news',
-      collections: [
-        {
-          name: 'news',
-          label: 'News',
-          folder: 'News',
-          create: true,
-          slug: '{{slug}}',
-          extension: 'md',
-          format: 'frontmatter',
-          fields: [
-            { label: 'Title', name: 'title', widget: 'string' },
-            { label: 'Date', name: 'date', widget: 'datetime' },
-            { label: 'EEP Phase', name: 'phase', widget: 'select', options: ['I', 'II', 'III', 'IV'] },
-            { label: 'Image', name: 'image', widget: 'image' },
-            { label: 'Body', name: 'body', widget: 'markdown' },
-          ],
+    // Wait for the DOM to be fully loaded before initializing the CMS
+    document.addEventListener('DOMContentLoaded', function() {
+      var config = {
+        backend: {
+          name: 'github',
+          repo: 'davephantxm/EEPsite',
+          branch: 'main',
+          auth_type: 'pkce',
         },
-      ],
-    };
+        media_folder: 'images/news',
+        public_folder: '/images/news',
+        collections: [
+          {
+            name: 'news',
+            label: 'News',
+            folder: 'News',
+            create: true,
+            slug: '{{slug}}',
+            extension: 'md',
+            format: 'frontmatter',
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Date', name: 'date', widget: 'datetime' },
+              { label: 'EEP Phase', name: 'phase', widget: 'select', options: ['I', 'II', 'III', 'IV'] },
+              { label: 'Image', name: 'image', widget: 'image' },
+              { label: 'Body', name: 'body', widget: 'markdown' },
+            ],
+          },
+        ],
+      };
 
-    CMS.init({ config });
+      CMS.init({ config });
+    });
   </script>
 </body>
 </html>
