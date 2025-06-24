@@ -1,5 +1,10 @@
 function loadHeader(pathToRoot = './') {
     const header = `
+    <style>
+        #dropdown-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
             <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
@@ -12,7 +17,7 @@ function loadHeader(pathToRoot = './') {
                         <div class="relative dropdown-container">
                             <button style="color: var(--new-white);" class="text-base font-medium flex items-center focus:outline-none transition-colors duration-200">
                                 EEP Projects
-                                <svg class="ml-1 w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                <svg class="ml-1 w-4 h-4" style="transition: transform 0.3s ease-in-out;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </button>
                             <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg opacity-0 pointer-events-none translate-y-2 transition-all duration-300 z-50 dropdown-menu" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px);">
                                 <a href="${pathToRoot}eep-i.html" style="color: var(--new-white);" class="block px-6 py-3 transition-colors duration-200">EEP Phase I</a>
@@ -98,13 +103,13 @@ function loadHeader(pathToRoot = './') {
         container.addEventListener('mouseenter', () => {
             menu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
             menu.classList.add('opacity-100', 'translate-y-0');
-            svg.classList.add('rotate-180');
+            svg.style.transform = 'rotate(180deg)';
         });
 
         container.addEventListener('mouseleave', () => {
             menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
             menu.classList.remove('opacity-100', 'translate-y-0');
-            svg.classList.remove('rotate-180');
+            svg.style.transform = 'rotate(0deg)';
         });
     });
 }
