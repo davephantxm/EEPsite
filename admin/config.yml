@@ -2,8 +2,7 @@ backend:
   name: github
   repo: davephantxm/EEPsite
   branch: main
-  auth_type: implicit
-  app_id: Ov23lihVlRZR9OA9wIPJ
+  auth_type: pkce
 
 media_folder: "images/news"
 public_folder: "/images/news"
