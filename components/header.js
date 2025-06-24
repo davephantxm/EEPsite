@@ -3,9 +3,9 @@ function loadHeader(pathToRoot = './') {
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
             <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
-                <div class="flex items-center flex-shrink-0 mr-8">
-                    <img href="${pathToRoot}index.html" src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
-                    </div>
+                <div href="${pathToRoot}index.html" class="flex items-center flex-shrink-0 mr-8">
+                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
+                </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="${pathToRoot}index.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Home</a>
