@@ -100,16 +100,21 @@ function loadHeader(pathToRoot = './') {
         const menu = container.querySelector('.dropdown-menu');
         const svg = container.querySelector('svg');
 
+        let timeout;
+
         container.addEventListener('mouseenter', () => {
+            clearTimeout(timeout);
             menu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
             menu.classList.add('opacity-100', 'translate-y-0');
             svg.style.transform = 'rotate(180deg)';
         });
 
         container.addEventListener('mouseleave', () => {
-            menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-            menu.classList.remove('opacity-100', 'translate-y-0');
-            svg.style.transform = 'rotate(0deg)';
+            timeout = setTimeout(() => {
+                menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                menu.classList.remove('opacity-100', 'translate-y-0');
+                svg.style.transform = 'rotate(0deg)';
+            }, 200);
         });
     });
 }
