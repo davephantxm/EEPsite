@@ -16,8 +16,9 @@ function loadFooter(pathToRoot = './') {
                 <div class="col-span-1">
                     <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Company</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block">Visit REA</a></li>
                         <li><a href="https://nep.rea.gov.ng/" class="hover:text-gray-200 footer-link inline-block">Visit NEP</a></li>
+                        <li><a href="#" class="hover:text-gray-200 footer-link inline-block">Visit REA</a></li>
+                        
                     </ul>
                 </div>
 
