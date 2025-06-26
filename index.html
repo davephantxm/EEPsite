@@ -412,14 +412,12 @@
         });
     </script>
     <script>
-        // Load components when the page loads
+        // Combine all DOMContentLoaded logic
         document.addEventListener('DOMContentLoaded', function() {
             loadHeader();
             loadFooter();
-        });
 
-        // Enhanced Carousel Logic with 4-bar Progress Indicator and Dynamic Text
-        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel logic (existing code)
             const slides = document.querySelectorAll('.carousel-slide');
             const progressBars = document.querySelectorAll('.carousel-progress-bar');
             const progressFills = document.querySelectorAll('.carousel-progress-fill');
@@ -577,11 +575,8 @@
             updateProgressBars(0, 0);
             animateCurrentBar(0);
             startAutoSlide();
-        });
-    </script>
-    <script>
-        // Count Up Animation for Projected Impact Section
-        document.addEventListener('DOMContentLoaded', function() {
+
+            // Count Up Animation for Projected Impact Section using Intersection Observer
             function animateCountUp(el, target) {
                 let start = 0;
                 let duration = 2000; // total duration in ms
@@ -605,10 +600,28 @@
                 requestAnimationFrame(step);
             }
             const counters = document.querySelectorAll('.countup');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                animateCountUp(counter, target);
-            });
+            let animated = false;
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !animated) {
+                            counters.forEach(counter => {
+                                const target = parseInt(counter.getAttribute('data-target'));
+                                animateCountUp(counter, target);
+                            });
+                            animated = true;
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                counters.forEach(counter => observer.observe(counter));
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    animateCountUp(counter, target);
+                });
+            }
         });
     </script>
 </body>
