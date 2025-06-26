@@ -588,7 +588,8 @@
             // Count Up Animation for Projected Impact Section using Intersection Observer (repeats every time in view)
             function animateCountUp(el, target) {
                 let start = 0;
-                let duration = 2000; // total duration in ms
+-                let duration = 2000; // total duration in ms
++                let duration = 5000; // total duration in ms (slower)
                 let startTime = null;
                 function easeOutExpo(t) {
                     return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
