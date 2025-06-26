@@ -221,6 +221,38 @@
             </div>
         </section>
 
+        <!-- Projected Impact Section -->
+        <section class="py-16 bg-white" data-aos="fade-up">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Projected Impact</h2>
+                    <div class="w-24 h-1 bg-black mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto text-center">
+                    <div class="flex flex-col items-center justify-center p-6 border rounded-xl shadow">
+                        <span class="countup text-4xl md:text-5xl font-bold text-black" data-target="195000">0</span>
+                        <span class="mt-2 text-lg text-black-700">Students Have access to electricity</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-6 border rounded-xl shadow">
+                        <span class="countup text-4xl md:text-5xl font-bold text-black" data-target="35000">0</span>
+                        <span class="mt-2 text-lg text-black-700">Staff Have access to electricity</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-6 border rounded-xl shadow">
+                        <span class="countup text-4xl md:text-5xl font-bold text-black" data-target="2500">0</span>
+                        <span class="mt-2 text-lg text-black-700">Medical staff Have access to electricity</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-6 border rounded-xl shadow">
+                        <span class="countup text-4xl md:text-5xl font-bold text-black" data-target="140">0</span>
+                        <span class="mt-2 text-lg text-black-700">Female SETM student Trainee</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-6 border rounded-xl shadow">
+                        <span class="countup text-4xl md:text-5xl font-bold text-black" data-target="700">0</span>
+                        <span class="mt-2 text-lg text-black-700">Students Trained by EPC contractors</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- News/Updates Section -->
         <section class="relative overflow-hidden" data-aos="fade-up">
             <div class="absolute inset-0 opacity-3">
@@ -545,6 +577,38 @@
             updateProgressBars(0, 0);
             animateCurrentBar(0);
             startAutoSlide();
+        });
+    </script>
+    <script>
+        // Count Up Animation for Projected Impact Section
+        document.addEventListener('DOMContentLoaded', function() {
+            function animateCountUp(el, target) {
+                let start = 0;
+                let duration = 2000; // total duration in ms
+                let startTime = null;
+                function easeOutExpo(t) {
+                    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                }
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    let progress = (timestamp - startTime) / duration;
+                    if (progress > 1) progress = 1;
+                    let eased = easeOutExpo(progress);
+                    let value = Math.floor(eased * (target - start) + start);
+                    el.textContent = value.toLocaleString();
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        el.textContent = target.toLocaleString() + (target >= 1000 ? '+' : '');
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+            const counters = document.querySelectorAll('.countup');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateCountUp(counter, target);
+            });
         });
     </script>
 </body>
