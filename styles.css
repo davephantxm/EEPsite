@@ -230,13 +230,14 @@ html {
 /* Hero section font customizations */
 #carousel-title, .hero-title {
     font-family: 'Fjalla One', Arial, sans-serif !important;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 400;
     letter-spacing: 0.5px;
+    line-height: 1.1;
 }
 @media (min-width: 768px) {
     #carousel-title, .hero-title {
-        font-size: 4.5rem;
+        font-size: 5.5rem;
     }
 }
 #carousel-desc, .hero-desc {
