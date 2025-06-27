@@ -227,15 +227,28 @@ html {
 #header nav a:hover span:nth-child(10), #header nav button:hover span:nth-child(10), #header .group .absolute a:hover span:nth-child(10), #mobile-menu a:hover span:nth-child(10) { transition-delay: 0.27s; }
 /* Add more nth-child rules for longer text */
 
-/* Apply Unbounded font to Hero section title */
-#carousel-title {
-    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+/* Hero section font customizations */
+#carousel-title, .hero-title {
+    font-family: 'Fjalla One', Arial, sans-serif !important;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
-
-/* Apply Lora font and italic style to Hero section description */
-#carousel-desc {
-    font-family: 'Lora', serif;
+@media (min-width: 768px) {
+    #carousel-title, .hero-title {
+        font-size: 4.5rem;
+    }
+}
+#carousel-desc, .hero-desc {
+    font-family: 'Merriweather Sans', Arial, sans-serif !important;
     font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+    #carousel-desc, .hero-desc {
+        font-size: 1.75rem;
+    }
 }
 
 /* Apply pulsating glow effect on hover for header text and hero description */
