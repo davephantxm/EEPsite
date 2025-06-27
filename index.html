@@ -584,55 +584,6 @@
             updateProgressBars(0, 0);
             animateCurrentBar(0);
             startAutoSlide();
-
-            // Count Up Animation for Projected Impact Section using Intersection Observer (repeats every time in view)
-            function animateCountUp(el, target) {
-                let start = 0;
-                let duration = 5000; // total duration in ms (slower)
-                let startTime = null;
-                function easeOutExpo(t) {
-                    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-                }
-                function step(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    let progress = (timestamp - startTime) / duration;
-                    if (progress > 1) progress = 1;
-                    let eased = easeOutExpo(progress);
-                    let value = Math.floor(eased * (target - start) + start);
-                    el.textContent = value.toLocaleString();
-                    if (progress < 1) {
-                        requestAnimationFrame(step);
-                    } else {
-                        el.textContent = target.toLocaleString() + (target >= 1000 ? '+' : '');
-                    }
-                }
-                requestAnimationFrame(step);
-            }
-            const counters = document.querySelectorAll('.countup');
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            counters.forEach(counter => {
-                                const target = parseInt(counter.getAttribute('data-target'));
-                                animateCountUp(counter, target);
-                            });
-                        } else {
-                            // Reset to 0 when out of view
-                            counters.forEach(counter => {
-                                counter.textContent = '0';
-                            });
-                        }
-                    });
-                }, { threshold: 0.3 });
-                counters.forEach(counter => observer.observe(counter));
-            } else {
-                // Fallback for browsers without IntersectionObserver
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    animateCountUp(counter, target);
-                });
-            }
         });
     </script>
 </body>
