@@ -72,7 +72,7 @@ function loadFooter(pathToRoot = './') {
                 <!-- Contact Info -->
                 <div class="col-span-1">
                     <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Contact Us</h4>
-                    <address class="not-italic space-y-4 footer-glow-hover">
+                    <address class="not-italic space-y-4">
                         <p>The Centurion Building,</p>
                         <p> 15th Street, Constitution Ave. CBD.,</p>
                         <p>Opposite Churchgate Building</p>
