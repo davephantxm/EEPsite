@@ -265,10 +265,12 @@ html {
 #mobile-menu a,
 #carousel-title,
 #carousel-desc {
-    /* Subtle static glow effect */
-    text-shadow: 
-        0 0 1px var(--new-white),
-        0 0 3px var(--new-white);
+    text-shadow: none !important;
+}
+
+#header nav a:hover,
+#header nav button:hover {
+    text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff !important;
 }
 
 .eep-glass-card {
