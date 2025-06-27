@@ -324,4 +324,10 @@ html {
 .carousel-slide {
     will-change: opacity, transform;
     background: transparent !important;
+}
+
+section h1, section h2, section h3, .section-header {
+    font-family: 'Fjalla One', Arial, sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 } 
