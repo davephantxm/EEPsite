@@ -1,6 +1,13 @@
 function loadFooter(pathToRoot = './') {
     const footer = `
     <footer style="background: rgba(0,100,56,1); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);" class="relative overflow-hidden text-white animate-fade-in rounded-t-3xl">
+        <style>
+            .footer-glow-hover, .footer-link, footer h4, .footer-copyright {
+                font-family: 'Fjalla One', Arial, sans-serif !important;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+            }
+        </style>
         <div class="absolute inset-0 pointer-events-none" style="background: url('${pathToRoot}assets/noise.png'); opacity: 0.15; mix-blend-mode: overlay; z-index: 1;"></div>
         <div class="absolute inset-0 opacity-10" style="z-index: 2;">
             <img src="${pathToRoot}images/lines.png" alt="" class="w-full h-full object-cover">
@@ -87,7 +94,7 @@ function loadFooter(pathToRoot = './') {
             </div>
 
             <!-- Bottom Bar -->
-            <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm">
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm footer-copyright">
                 <p>&copy; 2025 Energizing Education Programme. All rights reserved.</p>
             </div>
         </div>

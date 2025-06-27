@@ -4,6 +4,11 @@ function loadHeader(pathToRoot = './') {
         #dropdown-arrow {
             transition: transform 0.3s ease-in-out;
         }
+        nav a, nav button, #mobile-menu a {
+            font-family: 'Fjalla One', Arial, sans-serif !important;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
     </style>
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
