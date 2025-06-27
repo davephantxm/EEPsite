@@ -1,5 +1,6 @@
 function loadHeader(pathToRoot = './') {
     const header = `
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <style>
         #dropdown-arrow {
             transition: transform 0.3s ease-in-out;

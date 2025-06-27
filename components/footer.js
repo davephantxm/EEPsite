@@ -1,5 +1,6 @@
 function loadFooter(pathToRoot = './') {
     const footer = `
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <footer style="background: rgba(0,100,56,1); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);" class="relative overflow-hidden text-white animate-fade-in rounded-t-3xl">
         <style>
             .footer-glow-hover, .footer-link, footer h4, .footer-copyright {
