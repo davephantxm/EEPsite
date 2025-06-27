@@ -73,22 +73,22 @@ function loadFooter(pathToRoot = './') {
                 <div class="col-span-1">
                     <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Contact Us</h4>
                     <address class="not-italic space-y-4">
-                        <p>The Centurion Building,</p>
-                        <p> 15th Street, Constitution Ave. CBD.,</p>
-                        <p>Opposite Churchgate Building</p>
-                        <p>Abuja, Nigeria</p>
+                        <p class="footer-link footer-glow-hover">The Centurion Building,</p>
+                        <p class="footer-link footer-glow-hover"> 15th Street, Constitution Ave. CBD.,</p>
+                        <p class="footer-link footer-glow-hover">Opposite Churchgate Building</p>
+                        <p class="footer-link footer-glow-hover">Abuja, Nigeria</p>
 
-                        <p class="mt-8">
-                            <a href="mailto:nep@rea.gov.ng" class="hover:text-gray-200 footer-link inline-block">nep@rea.gov.ng</a>
+                        <p class="mt-8 footer-link footer-glow-hover">
+                            <a href="mailto:nep@rea.gov.ng" class="hover:text-gray-200 footer-link footer-glow-hover inline-block">nep@rea.gov.ng</a>
                         </p>
-                        <p>
-                            <a href="tel:+2348112494040" class="hover:text-gray-200 footer-link inline-block">(+234) 811 249 4040</a>
+                        <p class="footer-link footer-glow-hover">
+                            <a href="tel:+2348112494040" class="hover:text-gray-200 footer-link footer-glow-hover inline-block">(+234) 811 249 4040</a>
                         </p>
-                        <p>
-                            <a href="tel:+2348107829134" class="hover:text-gray-200 footer-link inline-block">(+234) 810 782 9134</a>
+                        <p class="footer-link footer-glow-hover">
+                            <a href="tel:+2348107829134" class="hover:text-gray-200 footer-link footer-glow-hover inline-block">(+234) 810 782 9134</a>
                         </p>
-                        <p>
-                            <a href="tel:+23480020202020" class="hover:text-gray-200 footer-link inline-block">(+234) 800 202 02020</a>
+                        <p class="footer-link footer-glow-hover">
+                            <a href="tel:+23480020202020" class="hover:text-gray-200 footer-link footer-glow-hover inline-block">(+234) 800 202 02020</a>
                         </p>
                     </address>
                 </div>
