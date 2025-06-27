@@ -339,4 +339,35 @@ section h1, section h2, section h3, .section-header {
 .font-sans {
     font-family: 'Merriweather Sans', Arial, sans-serif !important;
     font-weight: 300;
+}
+
+.project-impact-kpi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
+    padding: 1.5rem 0;
+}
+
+.project-impact-kpi .countup {
+    font-size: 2.5rem;
+    font-family: 'Fjalla One', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0.5rem 0 0.25rem 0;
+    line-height: 1;
+}
+
+.project-impact-kpi img {
+    margin-bottom: 0.5rem;
+}
+
+.project-impact-kpi .kpi-label {
+    font-size: 1rem;
+    font-family: 'Merriweather Sans', Arial, sans-serif;
+    font-weight: 300;
+    margin-top: 0.25rem;
+    text-align: center;
+    line-height: 1.3;
 } 
