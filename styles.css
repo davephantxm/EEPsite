@@ -251,6 +251,12 @@ html {
     }
 }
 
+/* Remove pulsating glow from hero section */
+#carousel-title, .hero-title, #carousel-desc, .hero-desc {
+    text-shadow: none !important;
+    animation: none !important;
+}
+
 /* Apply pulsating glow effect on hover for header text and hero description */
 #header nav a,
 #header nav button,
