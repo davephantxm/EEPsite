@@ -73,7 +73,7 @@ function loadFooter(pathToRoot = './') {
                 <div class="col-span-1">
                     <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Contact Us</h4>
                     <address class="not-italic space-y-4">
-                        <p class="footer-link footer-glow-hover">The Centurion Building, <br> 15th Street, Constitution Ave. CBD., <br> Opposite Churchgate Building <br> Abuja, Nigeria</p>
+                        <p class="footer-link footer-glow-hover text-200">The Centurion Building, <br> 15th Street, Constitution Ave. CBD., <br> Opposite Churchgate Building <br> Abuja, Nigeria</p>
 
                         <p class="mt-8 footer-link footer-glow-hover">
                             <a href="mailto:nep@rea.gov.ng" class="hover:text-gray-200 footer-link footer-glow-hover inline-block">nep@rea.gov.ng</a>
