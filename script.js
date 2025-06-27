@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    animateOdometerAll();
 });
 
 // Smooth scroll functionality
@@ -158,4 +160,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-}); 
+});
+
+// Odometer-style count-up animation for Projected Impact section
+function animateOdometerAll() {
+    const counters = document.querySelectorAll('.countup');
+    counters.forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        if (!target) return;
+        animateOdometer(counter, target);
+    });
+}
+
+function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
+    const digits = String(number).split('');
+    element.innerHTML = '';
+    // Create spans for each digit
+    const digitSpans = digits.map(() => {
+        const span = document.createElement('span');
+        span.textContent = '0';
+        span.style.display = 'inline-block';
+        span.style.transition = 'transform 0.2s cubic-bezier(0.4,0,0.2,1)';
+        element.appendChild(span);
+        return span;
+    });
+    let currentDigit = 0;
+    let intervals = [];
+    // Start rolling all digits
+    digitSpans.forEach((span, idx) => {
+        intervals[idx] = setInterval(() => {
+            let val = parseInt(span.textContent, 10);
+            val = (val + 1) % 10;
+            span.textContent = val;
+        }, rollSpeed);
+    });
+    function stopNextDigit() {
+        if (currentDigit < digits.length) {
+            clearInterval(intervals[currentDigit]);
+            digitSpans[currentDigit].textContent = digits[currentDigit];
+            currentDigit++;
+            setTimeout(stopNextDigit, digitDelay);
+        }
+    }
+    setTimeout(stopNextDigit, digitDelay);
+} 

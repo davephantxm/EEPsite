@@ -291,4 +291,13 @@ html {
 .eep-glass-card svg {
     display: inline;
     vertical-align: middle;
+}
+
+.countup span {
+    font-size: 2em;
+    margin: 0 2px;
+    min-width: 1ch;
+    text-align: center;
+    display: inline-block;
+    transition: opacity 0.3s, transform 0.2s cubic-bezier(0.4,0,0.2,1);
 } 
