@@ -334,4 +334,9 @@ section h1, section h2, section h3, .section-header {
     font-family: 'Fjalla One', Arial, sans-serif !important;
     font-weight: 400;
     letter-spacing: 0.5px;
+}
+
+.font-sans {
+    font-family: 'Merriweather Sans', Arial, sans-serif !important;
+    font-weight: 300;
 } 
