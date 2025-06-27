@@ -319,4 +319,9 @@ html {
     text-align: center;
     display: inline-block;
     transition: opacity 0.3s, transform 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.carousel-slide {
+    will-change: opacity, transform;
+    background: transparent !important;
 } 

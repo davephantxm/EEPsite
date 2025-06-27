@@ -499,32 +499,28 @@
                 if (isSliding || idx === current) return;
                 isSliding = true;
                 const prev = current;
-                slides.forEach((slide, i) => {
-                    slide.style.transition = 'none';
-                    if (i === prev) {
-                        slide.style.transform = 'translateX(0)';
-                        slide.style.opacity = '1';
-                        slide.style.zIndex = '1';
-                    } else {
-                        slide.style.transform = `translateX(${direction > 0 ? '100%' : '-100%'})`;
-                        slide.style.opacity = '0';
-                        slide.style.zIndex = '0';
-                    }
-                });
+                // Bring in the new slide underneath the old one
+                slides[idx].style.transition = 'none';
+                slides[idx].style.transform = 'translateX(0)';
+                slides[idx].style.opacity = '0';
+                slides[idx].style.zIndex = '2';
+                // Animate new slide in
                 setTimeout(() => {
-                    slides[prev].style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
-                    slides[idx].style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
-                    slides[prev].style.transform = `translateX(${direction > 0 ? '-100%' : '100%'})`;
-                    slides[prev].style.opacity = '0';
-                    slides[prev].style.zIndex = '0';
-                    slides[idx].style.transform = 'translateX(0)';
+                    slides[idx].style.transition = 'opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
                     slides[idx].style.opacity = '1';
-                    slides[idx].style.zIndex = '1';
                 }, 10);
+                // Fade out old slide
                 setTimeout(() => {
+                    slides[prev].style.transition = 'opacity 0.7s cubic-bezier(0.4,0,0.2,1)';
+                    slides[prev].style.opacity = '0';
+                }, 100);
+                // After transition, reset z-indexes and update current
+                setTimeout(() => {
+                    slides[prev].style.zIndex = '0';
+                    slides[idx].style.zIndex = '1';
                     current = idx;
                     isSliding = false;
-                }, 700);
+                }, 800);
                 updateOverlay(idx);
                 animateCurrentBar(idx);
             }
