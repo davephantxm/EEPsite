@@ -8,6 +8,11 @@ function loadHeader(pathToRoot = './') {
             font-family: 'Fjalla One', Arial, sans-serif !important;
             font-weight: 400;
             letter-spacing: 0.5px;
+            text-shadow: none;
+            transition: text-shadow 0.3s;
+        }
+        nav a:hover, nav button:hover, #mobile-menu a:hover {
+            text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
         }
     </style>
     <header>
