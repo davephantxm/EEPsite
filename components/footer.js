@@ -71,7 +71,7 @@ function loadFooter(pathToRoot = './') {
 
                 <!-- Contact Info -->
                 <div class="col-span-1">
-                    <h4 class="text-lg font-semibold mb-6 footer-glow-hover">Contact Us</h4>
+                    <h4 class="text-lg font-semibold mb-4 footer-glow-hover">Contact Us</h4>
                     <address class="not-italic space-y-4">
                     <p class="footer-link footer-glow-hover">
                         <a>The Centurion Building,</a>
