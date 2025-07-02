@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     animateOdometerAll();
+    animateHeroText();
 });
 
 // Smooth scroll functionality
@@ -203,4 +204,19 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
         }
     }
     setTimeout(stopNextDigit, digitDelay);
+}
+
+// GSAP animation for hero section text
+function animateHeroText() {
+    gsap.fromTo('#carousel-title', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
+    gsap.fromTo('#carousel-desc', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
+}
+
+// Animate hero text on carousel slide change
+if (typeof updateOverlay === 'function') {
+    const originalUpdateOverlay = updateOverlay;
+    window.updateOverlay = function(idx) {
+        originalUpdateOverlay(idx);
+        animateHeroText();
+    };
 } 
