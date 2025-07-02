@@ -242,21 +242,17 @@ function animateHeroText() {
 }
 
 // --- Ensure dynamic GSAP animation runs on every carousel text change and on click ---
-(function() {
-    // Patch updateOverlay to always call animateHeroText after text update
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof window.updateOverlay === 'function') {
-            const originalUpdateOverlay = window.updateOverlay;
-            window.updateOverlay = function(idx) {
-                console.log('Patched updateOverlay called with idx:', idx);
-                originalUpdateOverlay(idx);
-                setTimeout(animateHeroText, 0);
-            };
-        }
-        // Add click listeners to re-animate on click
-        const titleEl = document.getElementById('carousel-title');
-        const descEl = document.getElementById('carousel-desc');
-        if (titleEl) titleEl.addEventListener('click', animateHeroText);
-        if (descEl) descEl.addEventListener('click', animateHeroText);
-    });
-})(); 
+if (typeof window.updateOverlay === 'function') {
+    const originalUpdateOverlay = window.updateOverlay;
+    window.updateOverlay = function(idx) {
+        console.log('Patched updateOverlay called with idx:', idx);
+        originalUpdateOverlay(idx);
+        setTimeout(animateHeroText, 0);
+    };
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const titleEl = document.getElementById('carousel-title');
+    const descEl = document.getElementById('carousel-desc');
+    if (titleEl) titleEl.addEventListener('click', animateHeroText);
+    if (descEl) descEl.addEventListener('click', animateHeroText);
+}); 
