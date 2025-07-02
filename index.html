@@ -464,6 +464,7 @@
                 document.getElementById('carousel-desc').textContent = carouselData[idx].desc; 
                 // (GSAP animation removed to allow script.js to handle it)
             }
+            window.updateOverlay = updateOverlay;
 
             function updateProgressBars(activeIdx, percent = 0) {
                 progressFills.forEach((fill, i) => {
