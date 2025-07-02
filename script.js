@@ -240,11 +240,21 @@ function animateHeroText() {
     }
 }
 
-// Animate hero text on carousel slide change
-if (typeof updateOverlay === 'function') {
-    const originalUpdateOverlay = updateOverlay;
-    window.updateOverlay = function(idx) {
-        originalUpdateOverlay(idx);
-        animateHeroText();
-    };
-} 
+// --- Ensure dynamic GSAP animation runs on every carousel text change and on click ---
+(function() {
+    // Patch updateOverlay to always call animateHeroText after text update
+    if (typeof window.updateOverlay === 'function') {
+        const originalUpdateOverlay = window.updateOverlay;
+        window.updateOverlay = function(idx) {
+            originalUpdateOverlay(idx);
+            animateHeroText();
+        };
+    }
+    // Add click listeners to re-animate on click
+    document.addEventListener('DOMContentLoaded', function() {
+        const titleEl = document.getElementById('carousel-title');
+        const descEl = document.getElementById('carousel-desc');
+        if (titleEl) titleEl.addEventListener('click', animateHeroText);
+        if (descEl) descEl.addEventListener('click', animateHeroText);
+    });
+})(); 

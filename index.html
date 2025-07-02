@@ -462,13 +462,7 @@
             function updateOverlay(idx) {
                 document.getElementById('carousel-title').textContent = carouselData[idx].title;
                 document.getElementById('carousel-desc').textContent = carouselData[idx].desc; 
-                // Animate with GSAP
-                if (window.gsap) {
-                  gsap.set('#carousel-title', {y: 40, opacity: 0});
-                  gsap.set('#carousel-desc', {y: 40, opacity: 0});
-                  gsap.to('#carousel-title', {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
-                  gsap.to('#carousel-desc', {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
-                }
+                // (GSAP animation removed to allow script.js to handle it)
             }
 
             function updateProgressBars(activeIdx, percent = 0) {
