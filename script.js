@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     animateOdometerAll();
     animateHeroText();
+    setTimeout(animateHeroText, 100); // Ensure animation runs after initial overlay update
 });
 
 // Smooth scroll functionality
