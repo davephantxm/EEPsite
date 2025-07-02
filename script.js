@@ -208,11 +208,35 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
 
 // GSAP animation for hero section text
 function animateHeroText() {
-    console.log('GSAP:', typeof gsap !== 'undefined' ? 'loaded' : 'NOT loaded');
-    console.log('Running animateHeroText');
+    // Helper to split text into spans per word
+    function splitTextToSpans(element) {
+        if (!element) return;
+        const words = element.textContent.split(' ');
+        element.innerHTML = words.map(word => `<span class="gsap-word" style="display:inline-block; opacity:0;">${word}</span>`).join(' ');
+    }
+
+    const titleEl = document.getElementById('carousel-title');
+    const descEl = document.getElementById('carousel-desc');
+    splitTextToSpans(titleEl);
+    splitTextToSpans(descEl);
+
+    // Animate each word with stagger
     if (typeof gsap !== 'undefined') {
-        gsap.fromTo('#carousel-title', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
-        gsap.fromTo('#carousel-desc', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
+        gsap.to('#carousel-title .gsap-word', {
+            y: [40, 0],
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            stagger: 0.08
+        });
+        gsap.to('#carousel-desc .gsap-word', {
+            y: [40, 0],
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            delay: 0.2,
+            stagger: 0.06
+        });
     }
 }
 
