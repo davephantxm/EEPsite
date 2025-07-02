@@ -416,6 +416,7 @@
     <script src="components/footer.js"></script>
     <!-- AOS Animate on Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
         AOS.init({
             duration: 800, // Animation duration
@@ -461,9 +462,13 @@
             function updateOverlay(idx) {
                 document.getElementById('carousel-title').textContent = carouselData[idx].title;
                 document.getElementById('carousel-desc').textContent = carouselData[idx].desc; 
-                // const btn = document.getElementById('carousel-btn');
-                // btn.textContent = carouselData[idx].btnText;
-                // btn.setAttribute('href', carouselData[idx].btnLink);  
+                // Animate with GSAP
+                if (window.gsap) {
+                  gsap.set('#carousel-title', {y: 40, opacity: 0});
+                  gsap.set('#carousel-desc', {y: 40, opacity: 0});
+                  gsap.to('#carousel-title', {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
+                  gsap.to('#carousel-desc', {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
+                }
             }
 
             function updateProgressBars(activeIdx, percent = 0) {
@@ -583,7 +588,6 @@
             startAutoSlide();
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

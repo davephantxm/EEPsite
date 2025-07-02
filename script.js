@@ -208,8 +208,12 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
 
 // GSAP animation for hero section text
 function animateHeroText() {
-    gsap.fromTo('#carousel-title', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
-    gsap.fromTo('#carousel-desc', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
+    console.log('GSAP:', typeof gsap !== 'undefined' ? 'loaded' : 'NOT loaded');
+    console.log('Running animateHeroText');
+    if (typeof gsap !== 'undefined') {
+        gsap.fromTo('#carousel-title', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: 'power3.out'});
+        gsap.fromTo('#carousel-desc', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out'});
+    }
 }
 
 // Animate hero text on carousel slide change
