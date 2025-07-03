@@ -168,6 +168,62 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(descEl, { childList: true, characterData: true, subtree: true });
     }
     observeHeroTextChanges();
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.gsap-fade-up').forEach(el => {
+            gsap.from(el, {
+                y: 60,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+        gsap.utils.toArray('.gsap-fade-left').forEach(el => {
+            gsap.from(el, {
+                x: -60,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+        gsap.utils.toArray('.gsap-fade-right').forEach(el => {
+            gsap.from(el, {
+                x: 60,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+        gsap.utils.toArray('.gsap-zoom-in').forEach(el => {
+            gsap.from(el, {
+                scale: 0.8,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+    }
 });
 
 // Smooth scroll functionality
