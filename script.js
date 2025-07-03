@@ -149,6 +149,25 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOdometerAll();
     animateHeroText();
     setTimeout(animateHeroText, 100); // Ensure animation runs after initial overlay update
+
+    // --- MutationObserver to trigger animation on text change ---
+    function observeHeroTextChanges() {
+        const titleEl = document.getElementById('carousel-title');
+        const descEl = document.getElementById('carousel-desc');
+        if (!titleEl || !descEl) return;
+        let lastTitle = titleEl.textContent;
+        let lastDesc = descEl.textContent;
+        const observer = new MutationObserver(() => {
+            if (titleEl.textContent !== lastTitle || descEl.textContent !== lastDesc) {
+                lastTitle = titleEl.textContent;
+                lastDesc = descEl.textContent;
+                animateHeroText();
+            }
+        });
+        observer.observe(titleEl, { childList: true, characterData: true, subtree: true });
+        observer.observe(descEl, { childList: true, characterData: true, subtree: true });
+    }
+    observeHeroTextChanges();
 });
 
 // Smooth scroll functionality
