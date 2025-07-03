@@ -224,7 +224,7 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
         }
     }
     setTimeout(stopNextDigit, digitDelay);
-}
+} 
 
 // GSAP animation for hero section text
 function animateHeroText() {
