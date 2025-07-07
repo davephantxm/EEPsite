@@ -231,12 +231,14 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
 function setupOdometerOnSectionView() {
     const section = document.querySelector('section:has(.project-impact-kpi)');
     if (!section) return;
-    let hasAnimated = false;
+    const counters = document.querySelectorAll('.countup');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio === 1 && !hasAnimated) {
+            if (entry.isIntersecting && entry.intersectionRatio === 1) {
                 animateOdometerAll();
-                hasAnimated = true;
+            } else if (!entry.isIntersecting) {
+                // Reset counters to 0 when section leaves view
+                counters.forEach(counter => counter.innerHTML = '0');
             }
         });
     }, { threshold: 1.0 });
