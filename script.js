@@ -168,6 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(descEl, { childList: true, characterData: true, subtree: true });
     }
     observeHeroTextChanges();
+
+    setupOdometerOnSectionView();
 });
 
 // Smooth scroll functionality
@@ -224,7 +226,22 @@ function animateOdometer(element, number, digitDelay = 500, rollSpeed = 40) {
         }
     }
     setTimeout(stopNextDigit, digitDelay);
-} 
+}
+
+function setupOdometerOnSectionView() {
+    const section = document.querySelector('section:has(.project-impact-kpi)');
+    if (!section) return;
+    let hasAnimated = false;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio === 1 && !hasAnimated) {
+                animateOdometerAll();
+                hasAnimated = true;
+            }
+        });
+    }, { threshold: 1.0 });
+    observer.observe(section);
+}
 
 // GSAP animation for hero section text
 function animateHeroText() {
