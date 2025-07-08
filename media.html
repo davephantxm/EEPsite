@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Energizing Education Programme (EEP)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        .media-hero {
+            background: url('images/background.jpg') center center/cover no-repeat;
+            min-height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .media-hero-title {
+            color: #fff;
+            font-family: 'Fjalla One', Arial, sans-serif;
+            font-size: 3rem;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+        .media-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 overflow-x-hidden">
+    <div id="header"></div>
+    <main>
+        <section class="media-hero">
+            <h1 class="media-hero-title">Media</h1>
+        </section>
+        <section class="media-content" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 section-header">EEP Media Gallery</h2>
+            <p class="mb-8">Welcome to the EEP Media page. Here you will find photos, videos, and other media content showcasing the progress and impact of the Energizing Education Programme across Nigeria. Please check back soon for updates!</p>
+            <!-- Placeholder for future media gallery -->
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: false });
+    </script>
+</body>
+</html> 

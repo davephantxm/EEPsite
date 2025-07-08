@@ -39,7 +39,7 @@ function loadHeader(pathToRoot = './') {
                         <a href="${pathToRoot}stem.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Female STEM Internship</a>
                         <a href="#" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Resources</a>
                         <a href="${pathToRoot}news.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">News</a>
-                        <a href="#" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Media</a>
+                        <a href="${pathToRoot}media.html" style="color: var(--new-white);" class="text-base font-medium transition-colors duration-200">Media</a>
                     </div>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden ml-4" style="color: var(--new-white);" aria-label="Open menu" aria-expanded="false">
