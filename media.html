@@ -3,58 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media - Energizing Education Programme (EEP)</title>
+    <title>EEP News & Updates</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- AOS Animate on Scroll CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-        .media-hero {
-            background: url('images/background.jpg') center center/cover no-repeat;
-            min-height: 45vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        .media-hero-title {
-            color: #fff;
-            font-family: 'Fjalla One', Arial, sans-serif;
-            font-size: 3rem;
-            text-shadow: 0 2px 16px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-        .media-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            background: rgba(255,255,255,0.95);
-            border-radius: 1.5rem;
-            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-        }
-    </style>
 </head>
-<body class="font-sans bg-gray-50 overflow-x-hidden">
+<body class="font-sans">
+    <!-- Header Component -->
     <div id="header"></div>
+
+    <!-- Main Content -->
     <main>
-        <section class="media-hero">
-            <h1 class="media-hero-title">Media</h1>
+        <!-- Hero Section -->
+        <section class="relative w-full bg-white rounded-3xl overflow-hidden mx-2 mt-1 shadow-2xl flex items-center justify-start h-full" style="min-height:80vh;" data-aos="fade-in">
+            <!-- Background Image with dark overlay -->
+            <img src="images/background.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <div class="relative z-30 w-full max-w-6xl mx-auto h-full flex">
+                <div class="flex flex-col justify-center h-full w-full md:w-2/3 pl-2 md:pl-8">
+                    <div class="relative">
+                        <div class="relative container mx-auto px-4 z-10 flex items-center h-full">
+                            <div class="max-w-2xl p-6 rounded-lg bg-black bg-opacity-40 border-l-8 border-primary-green" data-aos="fade-right">
+                                <h1 class="text-white text-4xl md:text-6xl font-bold mb-4 font-['Unbounded',_sans-serif]">Media</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="media-content" data-aos="fade-up">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 section-header">EEP Media Gallery</h2>
-            <p class="mb-8">Welcome to the EEP Media page. Here you will find photos, videos, and other media content showcasing the progress and impact of the Energizing Education Programme across Nigeria. Please check back soon for updates!</p>
-            <!-- Placeholder for future media gallery -->
-        </section>
+
+        <!-- News Grid Section -->
+        
+
     </main>
+
+    <!-- Footer Component -->
     <div id="footer"></div>
+
+    <!-- Scripts -->
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <!-- AOS Animate on Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: false });
+        AOS.init({
+            duration: 800, // Animation duration
+            once: false // Whether animation should happen only once - while scrolling down
+        });
+    </script>
+    <script>
+        // Load components when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+        });
+    </script>
+    <script>
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Update button styles
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('bg-primary-green', 'text-white');
+            b.classList.add('bg-gray-200', 'text-gray-800');
+          });
+          this.classList.add('bg-primary-green', 'text-white');
+          this.classList.remove('bg-gray-200', 'text-gray-800');
+
+          // Filter cards
+          const phase = this.getAttribute('data-phase');
+          document.querySelectorAll('[data-phase]').forEach(card => {
+            // Only filter news cards, not filter buttons
+            if(card.classList.contains('bg-white')) {
+              if (phase === 'all' || card.getAttribute('data-phase') === phase) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            }
+          });
+        });
+      });
     </script>
 </body>
 </html> 
