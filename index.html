@@ -90,6 +90,14 @@
         .countup {
             font-family: 'Matangi', sans-serif;
         }
+        /* Hide horizontal scrollbar for all browsers */
+        .max-w-6xl.mx-auto.overflow-x-auto {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+        }
+        .max-w-6xl.mx-auto.overflow-x-auto::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Webkit */
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -559,36 +567,43 @@
         });
     </script>
     <script>
-// Auto-scroll for Implementing Partners row
+// Improved auto-scroll for Implementing Partners row
 (function() {
     const container = document.querySelector('.max-w-6xl.mx-auto.overflow-x-auto');
     if (!container) return;
     const scrollRow = container.querySelector('.flex');
     if (!scrollRow) return;
 
-    // Duplicate the row for seamless looping
-    const clone = scrollRow.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    container.appendChild(clone);
-    scrollRow.style.flexShrink = '0';
-    clone.style.flexShrink = '0';
-    container.scrollLeft = 0;
+    // Duplicate the logos inside the flex row for seamless looping
+    if (!scrollRow.classList.contains('looped')) {
+        scrollRow.innerHTML += scrollRow.innerHTML;
+        scrollRow.classList.add('looped');
+    }
 
     let paused = false;
     let scrollSpeed = 0.5; // pixels per frame (slow)
 
+    // Pause on hover (desktop)
+    container.addEventListener('mouseenter', () => { paused = true; });
+    container.addEventListener('mouseleave', () => { paused = false; });
+    // Pause/resume on click/tap (mobile/desktop)
+    container.addEventListener('click', () => { paused = !paused; });
+    container.addEventListener('touchstart', function(e) {
+        paused = !paused;
+        // Prevent accidental scroll on tap
+        e.preventDefault();
+    }, {passive: false});
+
     function step() {
         if (!paused) {
             container.scrollLeft += scrollSpeed;
-            // If we've scrolled past the first row, reset
-            if (container.scrollLeft >= scrollRow.scrollWidth) {
+            // When we've scrolled past the first set of logos, reset to start
+            if (container.scrollLeft >= scrollRow.scrollWidth / 2) {
                 container.scrollLeft = 0;
             }
         }
         requestAnimationFrame(step);
     }
-    container.addEventListener('mouseenter', () => { paused = true; });
-    container.addEventListener('mouseleave', () => { paused = false; });
     requestAnimationFrame(step);
 })();
 </script>
