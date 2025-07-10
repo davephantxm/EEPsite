@@ -558,6 +558,40 @@
             startAutoSlide();
         });
     </script>
+    <script>
+// Auto-scroll for Implementing Partners row
+(function() {
+    const container = document.querySelector('.max-w-6xl.mx-auto.overflow-x-auto');
+    if (!container) return;
+    const scrollRow = container.querySelector('.flex');
+    if (!scrollRow) return;
+
+    // Duplicate the row for seamless looping
+    const clone = scrollRow.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    container.appendChild(clone);
+    scrollRow.style.flexShrink = '0';
+    clone.style.flexShrink = '0';
+    container.scrollLeft = 0;
+
+    let paused = false;
+    let scrollSpeed = 0.5; // pixels per frame (slow)
+
+    function step() {
+        if (!paused) {
+            container.scrollLeft += scrollSpeed;
+            // If we've scrolled past the first row, reset
+            if (container.scrollLeft >= scrollRow.scrollWidth) {
+                container.scrollLeft = 0;
+            }
+        }
+        requestAnimationFrame(step);
+    }
+    container.addEventListener('mouseenter', () => { paused = true; });
+    container.addEventListener('mouseleave', () => { paused = false; });
+    requestAnimationFrame(step);
+})();
+</script>
     <script src="script.js"></script>
 </body>
 </html>
