@@ -231,7 +231,7 @@ html {
 
 /* Hero section font customizations */
 #carousel-title, .hero-title {
-    font-family: 'Fjalla One', Arial, sans-serif !important;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-size: 3.5rem;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -243,7 +243,7 @@ html {
     }
 }
 #carousel-desc, .hero-desc {
-    font-family: 'Merriweather Sans', Arial, sans-serif !important;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 1.25rem;
@@ -331,13 +331,13 @@ html {
 }
 
 section h1, section h2, section h3, .section-header {
-    font-family: 'Fjalla One', Arial, sans-serif !important;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
 
 .font-sans {
-    font-family: 'Merriweather Sans', Arial, sans-serif !important;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-weight: 300;
 }
 
@@ -352,7 +352,7 @@ section h1, section h2, section h3, .section-header {
 
 .project-impact-kpi .countup {
     font-size: 2.5rem;
-    font-family: 'Fjalla One', Arial, sans-serif;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 0.05em;
     margin: 0.5rem 0 0.25rem 0;
@@ -365,7 +365,7 @@ section h1, section h2, section h3, .section-header {
 
 .project-impact-kpi .kpi-label {
     font-size: 1rem;
-    font-family: 'Merriweather Sans', Arial, sans-serif;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-weight: 300;
     margin-top: 0.25rem;
     text-align: center;
