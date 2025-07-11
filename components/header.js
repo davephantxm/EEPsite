@@ -15,23 +15,6 @@ function loadHeader(pathToRoot = './') {
         nav a:hover, nav button:hover, #mobile-menu a:hover {
             text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
         }
-        /* --- MOBILE HEADER FIX --- */
-        @media (max-width: 767px) {
-            nav .flex.items-center.flex-shrink-0.mr-8 {
-                margin-right: 0.5rem !important;
-            }
-            nav .flex.items-center.flex-shrink-0.mr-8 img {
-                height: 2.25rem !important; /* h-9 */
-                max-width: 110px !important;
-            }
-            nav .rounded-full.flex.items-center.px-8.py-2 {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-            #mobile-menu-btn {
-                margin-left: 0.5rem !important;
-            }
-        }
     </style>
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
