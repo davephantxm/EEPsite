@@ -15,25 +15,12 @@ function loadHeader(pathToRoot = './') {
         nav a:hover, nav button:hover, #mobile-menu a:hover {
             text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
         }
-        @media (max-width: 767px) {
-            .header-logo-img {
-                height: 2.25rem !important; /* smaller logo on mobile */
-                margin-right: 0.5rem !important;
-            }
-            .header-logo-container {
-                margin-right: 0 !important;
-            }
-            .header-nav-inner {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-        }
     </style>
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto header-nav-inner" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
-                <div href="${pathToRoot}index.html" class="flex items-center flex-shrink-0 mr-8 header-logo-container">
-                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto header-logo-img">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
+                <div href="${pathToRoot}index.html" class="flex items-center flex-shrink-0 mr-8">
+                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
                 </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
@@ -56,8 +43,10 @@ function loadHeader(pathToRoot = './') {
                     </div>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden ml-4" style="color: var(--new-white);" aria-label="Open menu" aria-expanded="false">
-                    <img src="${pathToRoot}assets/menuButton.png" alt="Open menu" class="w-8 h-8" style="display: inline;" />
-                </button>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
