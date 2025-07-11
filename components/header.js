@@ -15,12 +15,23 @@ function loadHeader(pathToRoot = './') {
         nav a:hover, nav button:hover, #mobile-menu a:hover {
             text-shadow: 0 0 8px #fff, 0 0 16px #00c86b, 0 0 2px #fff;
         }
+        /* Mobile-specific adjustments for logo and nav container */
+        @media (max-width: 767px) {
+            .header-logo-img {
+                height: 2rem !important;
+                margin-right: 1rem !important;
+            }
+            .header-nav-container {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+        }
     </style>
     <header>
         <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto header-nav-container" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
                 <div href="${pathToRoot}index.html" class="flex items-center flex-shrink-0 mr-8">
-                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto">
+                    <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto header-logo-img">
                 </div>
                 <div class="flex-1 flex justify-center">
                     <div class="hidden md:flex items-center space-x-8">
