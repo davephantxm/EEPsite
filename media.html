@@ -43,7 +43,7 @@
         <section class="max-w-7xl mx-auto px-2 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Media Card 1: YouTube Video -->
-                <a href="https://www.youtube.com/watch?v=QkKmnA-10UI" target="_blank" rel="noopener" class="relative bg-white rounded-3xl shadow-md max-w-xl mx-auto p-3 flex flex-col gap-4 font-['Century Gothic',_CenturyGothic,_AppleGothic,_sans-serif] group hover:shadow-2xl transition-all duration-300 w-full">
+                <div id="video-card" class="relative bg-white rounded-3xl shadow-md max-w-xl mx-auto p-3 flex flex-col gap-4 font-['Century Gothic',_CenturyGothic,_AppleGothic,_sans-serif] group hover:shadow-2xl transition-all duration-300 w-full cursor-pointer">
                     <div class="relative w-full h-48 overflow-hidden rounded-2xl">
                         <img src="https://img.youtube.com/vi/QkKmnA-10UI/hqdefault.jpg" alt="YouTube Video Thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -55,9 +55,9 @@
                     </div>
                     <div class="flex flex-col gap-4 flex-1 p-2">
                         <div class="text-xl font-bold text-gray-800">Energizing Education Programme Phase II Reel</div>
-                        <div class="text-sm text-gray-500">Watch on YouTube.</div>
+                        <div class="text-sm text-gray-500">Watch the video.</div>
                     </div>
-                </a>
+                </div>
                 <!-- Media Card 2: Placeholder -->
                 <div class="bg-white rounded-3xl shadow-md max-w-xl mx-auto p-3 flex flex-col gap-4 font-['Century Gothic',_CenturyGothic,_AppleGothic,_sans-serif] w-full">
                     <div class="relative w-full h-48 overflow-hidden rounded-2xl">
@@ -91,10 +91,15 @@
             </div>
         </section>
 
-        <!-- News Grid Section -->
-        
-
-    </main>
+        <!-- Video Modal -->
+        <div id="video-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden">
+            <div class="relative w-full max-w-3xl mx-auto p-4">
+                <button id="close-modal" class="absolute top-2 right-2 text-white text-3xl font-bold z-10 hover:text-gray-300">&times;</button>
+                <div class="aspect-w-16 aspect-h-9 w-full rounded-2xl overflow-hidden bg-black">
+                    <iframe id="youtube-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 
     <!-- Footer Component -->
     <div id="footer"></div>
@@ -118,29 +123,29 @@
         });
     </script>
     <script>
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          // Update button styles
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.remove('bg-primary-green', 'text-white');
-            b.classList.add('bg-gray-200', 'text-gray-800');
-          });
-          this.classList.add('bg-primary-green', 'text-white');
-          this.classList.remove('bg-gray-200', 'text-gray-800');
+      // Video Modal Logic
+      const videoCard = document.getElementById('video-card');
+      const videoModal = document.getElementById('video-modal');
+      const closeModal = document.getElementById('close-modal');
+      const youtubeIframe = document.getElementById('youtube-iframe');
+      const youtubeUrl = 'https://www.youtube.com/embed/QkKmnA-10UI?autoplay=1';
 
-          // Filter cards
-          const phase = this.getAttribute('data-phase');
-          document.querySelectorAll('[data-phase]').forEach(card => {
-            // Only filter news cards, not filter buttons
-            if(card.classList.contains('bg-white')) {
-              if (phase === 'all' || card.getAttribute('data-phase') === phase) {
-                card.classList.remove('hidden');
-              } else {
-                card.classList.add('hidden');
-              }
-            }
-          });
-        });
+      videoCard.addEventListener('click', function() {
+        youtubeIframe.src = youtubeUrl;
+        videoModal.classList.remove('hidden');
+      });
+
+      closeModal.addEventListener('click', function() {
+        videoModal.classList.add('hidden');
+        youtubeIframe.src = '';
+      });
+
+      // Close modal on background click
+      videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+          videoModal.classList.add('hidden');
+          youtubeIframe.src = '';
+        }
       });
     </script>
 </body>
