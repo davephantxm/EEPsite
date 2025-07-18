@@ -28,8 +28,8 @@ function loadHeader(pathToRoot = './') {
         }
     </style>
     <header>
-        <nav class="fixed w-full z-50 top-2 flex justify-center pointer-events-none">
-            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto header-nav-container" style="backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12); background: rgba(0,100,56,1);">
+        <nav class="fixed w-full z-[9999] top-0 flex justify-center pointer-events-none" style="background: #006438;">
+            <div class="rounded-full flex items-center px-8 py-2 max-w-5xl mx-auto shadow-2xl pointer-events-auto header-nav-container">
                 <div href="${pathToRoot}index.html" class="flex items-center flex-shrink-0 mr-8">
                     <img src="${pathToRoot}images/EEP_Edited_Logo White.png" alt="EEP Logo" class="h-10 w-auto header-logo-img">
                 </div>
@@ -139,20 +139,4 @@ function loadHeader(pathToRoot = './') {
             }, 200);
         });
     });
-}
-
-function handleScroll() {
-    const header = document.querySelector('#header nav');
-    const heroSection = document.querySelector('section'); // Assuming the first section is the hero
-
-    if (!header || !heroSection) return;
-
-    const heroHeight = heroSection.offsetHeight;
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > heroHeight - header.offsetHeight) { // Adjust threshold based on header height
-        header.classList.add('scrolled-header');
-    } else {
-        header.classList.remove('scrolled-header');
-    }
 } 
