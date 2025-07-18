@@ -61,7 +61,7 @@ function loadHeader(pathToRoot = './') {
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 hidden md:hidden w-3/4 max-w-xs rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out" style="background: rgba(0,100,56,0.2); backdrop-filter: blur(80px); -webkit-backdrop-filter: blur(80px); box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 hidden md:hidden w-3/4 max-w-xs rounded-l-3xl shadow-lg p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out" style="background: #006438; box-shadow: 0 8px 48px 0 rgba(255,255,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.12);">
             <button id="close-mobile-menu" class="self-end mb-8" style="color: var(--new-white);" aria-label="Close menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
