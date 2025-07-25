@@ -649,28 +649,28 @@
 </script>
     <script src="script.js"></script>
     <script>
-        // Tilt effect for Project Impact KPI cards
-        function addTiltEffect(card) {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * 10; // max 10deg
-                const rotateY = ((x - centerX) / centerX) * -10;
-                card.style.transform = `scale(1.25) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            card.addEventListener('mouseleave', function() {
-                card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
-            });
-            card.addEventListener('mouseenter', function() {
-                card.style.transition = 'transform 0.2s cubic-bezier(.17,.67,.83,.67)';
-            });
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.project-impact-tilt').forEach(addTiltEffect);
-        });
+// Tilt effect for Project Impact KPI cards (more sensitive)
+function addTiltEffect(card) {
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 25; // max 25deg for more sensitivity
+        const rotateY = ((x - centerX) / centerX) * -25;
+        card.style.transform = `scale(1.25) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener('mouseleave', function() {
+        card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
+    });
+    card.addEventListener('mouseenter', function() {
+        card.style.transition = 'transform 0.2s cubic-bezier(.17,.67,.83,.67)';
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.project-impact-tilt').forEach(addTiltEffect);
+});
     </script>
 </body>
 </html>
