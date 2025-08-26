@@ -476,16 +476,17 @@ section h1, section h2, section h3, .section-header {
 
 	/* Scale down hero typography on narrow screens */
 	#carousel-title, .hero-title {
-		font-size: clamp(2rem, 8vw, 3rem);
+		font-size: clamp(2.25rem, 9.5vw, 3.5rem);
 		line-height: 1.2;
 	}
 	#carousel-desc, .hero-desc {
-		font-size: clamp(1.1rem, 5vw, 1.35rem);
+		font-size: clamp(1.2rem, 5.5vw, 1.5rem);
 		line-height: 1.4;
 	}
 
 	/* Improve readability of card titles like News headings */
 	.text-xl.font-bold {
+		font-size: 1.35rem;
 		line-height: 1.3;
 	}
 }
